@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Draw</title>
+    <script src="main.js"></script>
+    <link href="http://www.bootcss.com/p/buttons/css/buttons.css" rel="stylesheet" type="text/css">
+    <link href="main.css" rel="stylesheet" type="text/css">
+</head>
+<body >
+
+    <div class="box">
+            <canvas id="board" width="800px" height="600px" onmousedown="draw()"></canvas>
+            <p style="margin:0px"> 不需要画最后一条边，点击 Go fill 即自动完成填充 </p> 
+            <button type="button" name="button" onclick="fillDraw()" class="button button-action " style="margin-top:200px;margin-left:20px">Go fill</button>
+    </div>
+</body>
+</html>
