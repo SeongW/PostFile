@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="main.css" type="text/css" rel="stylesheet"/>
+        <script src="transformation.js"></script>
+        <title>二维变换</title>
+    </head>
+    <body>
+        <div class="box" onclick="draw()">
+            <canvas id="board" width="900px" height="600px"></canvas>
+        </div>
+        <div class="toolbar">
+            <div>
+                x:<input type="text" id="shift_x" >
+                y:<input type="text" id="shift_y" >
+                <button  class="btn" value="shift" onclick="changePolygon(this)">平移</button>
+            </div>
+            <div>
+                x:<input type="text" id="cut_x" >
+                y:<input type="text" id="cut_y" >
+                <button  class="btn" value="cut" onclick="changePolygon(this)">错切</button>
+            </div>
+            <div>
+                比例:<input type="text" id="range" >
+                <button  class="btn" value="scale" onclick="changePolygon(this)">缩放</button>
+            </div>
+            <div>
+                角度:<input type="text" id="angle">
+                <button  class="btn" value="rotate" onclick="changePolygon(this)">旋转</button>
+            </div>
+            <button   class="btn" style="width:100px" value="base" onclick="changePolygon(this)">原点对称</button><br/>
+            <button   class="btn" style="width:100px" value="symmetry_x" onclick="changePolygon(this)">x轴对称</button><br/>
+            <button   class="btn" style="width:100px" value="symmetry_y" onclick="changePolygon(this)">y轴对称</button><br/>
+            <button   class="btn" style="width:100px" value="symmetry_yx" onclick="changePolygon(this)">y=x轴对称</button><br/>
+            <button   class="btn" style="width:100px" value="symmetry_ryx" onclick="changePolygon(this)">y=-x轴对称</button><br/>
+
+            <button   class="btn" style="width:100px;backgound-color:red;margin-top:50px" onclick="initPolygon()">完成图案</button><br/>
+
+        </div>
+        <script>
+            drawAxes();
+            //initPolygon();
+        </script>
+    </body>
+</html>
