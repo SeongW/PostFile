@@ -1,0 +1,33 @@
+.box{
+    background-color: #999999;
+    width: 900px;
+    height: 600px;
+    z-index: 0;
+    float: left;
+}
+
+body{
+    margin: 0;
+}
+
+.draw{
+    z-index: 2;
+    position: absolute;
+}
+
+.viewPort{
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 300px;
+    height: 200px;
+    width: 300px;
+    background-color: #FFFFFF;
+    z-index: 1;
+}
+
+.toolbar{
+    background-color: #CFFFC5;
+    float: left;
+    width: 300px;
+    height: 600px;
+}
