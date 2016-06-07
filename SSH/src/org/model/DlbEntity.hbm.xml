@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="org.model.DlbEntity" table="dlb" schema="stuSys">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+        </id>
+        <property name="xh">
+            <column name="xh" sql-type="char(6)" length="6"/>
+        </property>
+        <property name="kl">
+            <column name="kl" sql-type="char(20)" length="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://localhost:3306/stuSys</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">woto12345</property>
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <mapping resource="org/model/CjbEntity.hbm.xml"/>
+        <mapping class="org.model.CjbEntity"/>
+        <mapping class="org.model.DlbEntity"/>
+        <mapping resource="org/model/DlbEntity.hbm.xml"/>
+        <mapping resource="org/model/KcbEntity.hbm.xml"/>
+        <mapping class="org.model.KcbEntity"/>
+        <mapping class="org.model.XsKcbEntity"/>
+        <mapping resource="org/model/XsKcbEntity.hbm.xml"/>
+        <mapping resource="org/model/XsbEntity.hbm.xml"/>
+        <mapping class="org.model.XsbEntity"/>
+        <mapping class="org.model.ZybEntity"/>
+        <mapping resource="org/model/ZybEntity.hbm.xml"/>
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>

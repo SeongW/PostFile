@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="org.model.XsKcbEntity" table="xs_kcb" schema="stuSys">
+        <composite-id mapped="true" class="org.model.XsKcbEntityPK">
+            <key-property name="xh">
+                <column name="xh" sql-type="char(6)" length="6"/>
+            </key-property>
+            <key-property name="kch">
+                <column name="kch" sql-type="char(3)" length="3"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+    <field name="dlbEntity.xh">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>学号是必须的！</message>
+        </field-validator>
+        <field-validator type="regex">
+            <param name="regex"><![CDATA[(\d{6,6})]]></param>
+            <message>学号必须是6位的数字</message>
+        </field-validator>
+    </field>
+    <field name="dlbEntity.kl">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>口令是必须的！</message>
+        </field-validator>
+        <field-validator type="stringlength">
+            <param name="minLength">2</param>
+            <param name="maxLength">20</param>
+            <message>口令必须大于6个字符，小于20个字符！</message>
+        </field-validator>
+    </field>
+</validators>

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="org.model.KcbEntity" table="kcb" schema="stuSys">
+        <id name="kch">
+            <column name="kch" sql-type="char(3)" length="3"/>
+        </id>
+        <property name="kcm">
+            <column name="kcm" sql-type="char(12)" length="12" not-null="true"/>
+        </property>
+        <property name="kxxq">
+            <column name="kxxq" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="xs">
+            <column name="xs" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="xf">
+            <column name="xf" sql-type="int(11)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

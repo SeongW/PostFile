@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       "
+>
+
+    <!--<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">-->
+        <!--<property name="configLocations" value="classpath:hibernate.cfg.xml"/>-->
+    <!--</bean>-->
+
+
+    <!--<bean id="datasource" class="org.apache.commons.dbcp.BasicDataSource">-->
+        <!--<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>-->
+        <!--<property name="url" value="jdbc:mysql://localhost:3306/stuSys"/>-->
+        <!--<property name="username" value="root"></property>-->
+        <!--<property name="password" value="woto12345"></property>-->
+    <!--</bean>-->
+
+
+
+
+    <bean id="datasource"	class="org.apache.commons.dbcp.BasicDataSource">
+        <!-- 定义数据库驱动 -->
+        <property name="driverClassName" value="com.mysql.jdbc.Driver">
+        </property>
+        <!-- 定义数据库URL -->
+        <property name="url" value="jdbc:mysql://localhost:3306/xscj">
+        </property>
+        <!-- 定义数据库的用户名 -->
+        <property name="username" value="root"></property>
+        <!-- 定义数据库密码 -->
+        <property name="password" value="woto12345"></property>
+    </bean>
+    <!-- 定义Hibernate的SessionFactory -->
+    <bean id="sessionFactory"	class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <!--定义SessionFactory必须注入DataSource-->
+        <property name="dataSource">
+            <ref bean="datasource" />
+        </property>
+        <!--定义Hibernate的SessionFactory属性-->
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">
+                    org.hibernate.dialect.MySQLDialect
+                </prop>
+            </props>
+        </property>
+        <!-- 定义POJO的映射文件 -->
+        <property name="mappingResources">
+            <list>
+                <value>org/model/DlbEntity.hbm.xml</value>
+                <value>org/model/XsbEntity.hbm.xml</value>
+                <value>org/model/KcbEntity.hbm.xml</value>
+                <value>org/model/ZybEntity.hbm.xml</value>
+                <value>org/model/CjbEntity.hbm.xml</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+
+
+    <bean id="transactionInterceptor"		class="org.springframework.transaction.interceptor.TransactionInterceptor">
+        <!--   事务拦截器bean需要依赖注入一个事务管理器 -->
+        <property name="transactionManager" ref="transactionManager" />
+        <property name="transactionAttributes">
+            <!-- 下面定义事务传播属性-->
+            <props>
+                <prop key="delete*" >PROPAGATION_REQUIRED</prop>
+                <prop key="save*">PROPAGATION_REQUIRED</prop>
+                <prop key="add*">PROPAGATION_REQUIRED</prop>
+                <prop key="update*">PROPAGATION_REQUIRED</prop>
+            </props>
+        </property>
+    </bean>
+    <!-- 定义BeanNameAutoProxyCreator,该bean无需被引用，因此没有id属性,这个bean根据事务拦截器为目标bean自动创建事务代理-->
+    <bean		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+        <!-- 指定对满足哪些bean name的bean自动生成业务代理  -->
+        <property name="beanNames">
+            <!--   下面是所有需要自动创建事务代理的bean-->
+            <list>
+                <value>XsService</value>
+                <value>KcService</value>
+                <value>CjService</value>
+                <value>ZyService</value>
+            </list>
+            <!--   此处可增加其他需要自动创建事务代理的bean-->
+        </property>
+        <!--   下面定义BeanNameAutoProxyCreator所需的事务拦截器-->
+        <property name="interceptorNames">
+            <list>
+                <value>transactionInterceptor</value>
+                <!-- 此处可增加其他新的Interceptor -->
+            </list>
+        </property>
+    </bean>
+
+
+
+    <!--<aop:config>-->
+        <!--<aop:pointcut id="**" expression="execution(* org.dao.*(..))"/>-->
+        <!--<aop:advisor advice-ref="txAdvice" pointcut-ref="**"/>-->
+    <!--</aop:config>-->
+
+    <!--<tx:advice id="txAdvice" transaction-manager="transactionManager">-->
+        <!--<tx:attributes>-->
+        <!--<tx:method name="add*" propagation="REQUIRED" read-only="false"/>-->
+        <!--<tx:method name="insert*" propagation="REQUIRED" read-only="false"/>-->
+        <!--<tx:method name="delete*" propagation="REQUIRED" read-only="false"/>-->
+        <!--<tx:method name="update*" propagation="REQUIRED" read-only="false"/>-->
+        <!--</tx:attributes>-->
+    <!--</tx:advice>-->
+
+
+
+
+
+
+    <bean id="dlDao" class="org.dao.DlDaoImp">
+        <property name="sessionFactory">
+            <ref bean="sessionFactory"/>
+        </property>
+    </bean>
+
+
+    <bean id="xsDao" class="org.dao.XsdaoImp">
+        <property name="sessionFactory">
+            <ref bean="sessionFactory"/>
+        </property>
+    </bean>
+    <bean id="kcDao" class="org.dao.KcDaoImp">
+        <property name="sessionFactory">
+            <ref bean="sessionFactory"/>
+        </property>
+    </bean>
+    <bean id="zyDao" class="org.dao.ZyDaoImp">
+        <property name="sessionFactory">
+            <ref bean="sessionFactory"/>
+        </property>
+    </bean>
+    <bean id="cjDao" class="org.dao.CjDaoImp">
+        <property name="sessionFactory">
+            <ref bean="sessionFactory"/>
+        </property>
+    </bean>
+
+
+    <bean id="dlService" class="org.service.DlServiceImp">
+        <property name="dlDao">
+            <ref bean="dlDao"/>
+        </property>
+    </bean>
+
+    <bean id="CjService" class="org.service.CjServiceManage">
+        <property name="cjDao">
+            <ref bean="cjDao"/>
+        </property>
+    </bean>
+
+    <bean id="KcService" class="org.service.KcServiceManage">
+        <property name="kcDao">
+            <ref bean="kcDao"/>
+        </property>
+        <property name="cjDao">
+            <ref bean="cjDao"/>
+        </property>
+    </bean>
+
+    <bean id="XsService" class="org.service.XsServiceManage">
+        <property name="xsDao">
+            <ref bean="xsDao"/>
+        </property>
+        <property name="cjDao">
+            <ref bean="cjDao"/>
+        </property>
+    </bean>
+    <bean id="ZyService" class="org.service.ZyServiceManage">
+        <property name="zydao">
+            <ref bean="zyDao"/>
+        </property>
+    </bean>
+
+
+
+
+    <!--action-->
+
+    <bean id="loginAction" class="org.action.loginAction" scope="prototype">
+        <property name="dlService">
+            <ref bean="dlService"/>
+        </property>
+    </bean>
+
+    <bean id="xsAction" class="org.action.XsAction">
+        <property name="xsService">
+            <ref bean="XsService" />
+        </property>
+        <property name="zyService">
+            <ref bean="ZyService" />
+        </property>
+    </bean>
+
+
+    <bean id="kcAction" class="org.action.KcAction">
+        <property name="kcService">
+            <ref bean="KcService" />
+        </property>
+    </bean>
+    <bean id="cjAction" class="org.action.CjAction">
+        <property name="xsService">
+            <ref bean="XsService" />
+        </property>
+        <property name="kcService">
+            <ref bean="KcService" />
+        </property>
+        <property name="cjService">
+            <ref bean="CjService" />
+        </property>
+    </bean>
+
+</beans>

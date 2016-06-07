@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+        <validators>
+    <field name="kc.kch">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>课程号是必须的!</message>
+        </field-validator>
+    </field>
+    <field name="kc.kcm">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>课程名是必须的!</message>
+        </field-validator>
+    </field>
+    <field name="kc.xf">
+        <field-validator type="requiredstring">
+            <param name="trim">true</param>
+            <message>学分是必须的</message>
+        </field-validator>
+    </field>
+</validators>

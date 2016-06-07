@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="org.model.XsbEntity" table="xsb" schema="stuSys">
+        <id name="xh">
+            <column name="XH" sql-type="char(6)" length="6"/>
+        </id>
+        <property name="xm">
+            <column name="XM" sql-type="char(8)" length="8"/>
+        </property>
+        <property name="xb">
+            <column name="XB" sql-type="varchar(45)" length="45"/>
+        </property>
+        <property name="cssj">
+            <column name="CSSJ" sql-type="datetime" not-null="false"/>
+        </property>
+        <property name="zyId">
+            <column name="ZY_ID" sql-type="int(11)"/>
+        </property>
+        <property name="zxf">
+            <column name="ZXF" sql-type="int(11)" not-null="false"/>
+        </property>
+        <property name="bz">
+            <column name="BZ" sql-type="varchar(200)" length="200" not-null="true"/>
+        </property>
+        <property name="zp">
+            <column name="ZP" sql-type="mediumblob" not-null="false"/>
+        </property>
+        <many-to-one name="zyb" class="org.model.ZybEntity" fetch="select" lazy="false" insert="false" update="false">
+            <column name="ZY_ID" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
