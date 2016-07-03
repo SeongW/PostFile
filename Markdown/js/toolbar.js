@@ -104,9 +104,6 @@ function addContent(btn){
             len = 3;
             select_len =2;
             break;
-
-
-
     }
     con.value = con.value.substring(0,pos)+newContent+con.value.substring(pos);
     setCaretPosition(con,pos,len);
@@ -209,3 +206,7 @@ function tabKey() {
     ev.returnValue = false;
 }
 
+function download(){
+    var content = document.getElementById("preview").innerText;
+    alert(content);
+}

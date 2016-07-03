@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>
@@ -8,28 +9,30 @@
     <script src="dist/js/jquery.min.js"></script>
     <script src="dist/js/bootstrap.min.js"></script>
     <script src="js/toolbar.js"></script>
-    <style >
-        p{
-            word-break:break-all;
+    <style>
+        p {
+            word-break: break-all;
         }
-        table{
-            border:solid #666666;
-            border-width:1px 1px 1px 1px;
+
+        table {
+            border: solid #666666;
+            border-width: 1px 1px 1px 1px;
         }
+
         tr th {
-            width:100px;
-            border:solid #666666;
-            border-width:1px 1px 1px 1px;
-        }
-        td{
-            border:solid #666666;
-            border-width:1px 1px 1px 1px;
+            width: 100px;
+            border: solid #666666;
+            border-width: 1px 1px 1px 1px;
         }
 
-
+        td {
+            border: solid #666666;
+            border-width: 1px 1px 1px 1px;
+        }
     </style>
 
 </head>
+
 <body onkeydown="tabKey()">
     <div class="container" style="margin-left: 5%;margin-top: 5px;">
         <div class="row">
@@ -45,21 +48,24 @@
             <div class="btn-group">
                 <button type="button" class="btn btn-default" onmouseup="addContent(this)" value=">">引用</button>
                 <button type="button" class="btn btn-default" onmouseup="addContent(this)" value="code">代码</button>
-                <button type="button" class="btn btn-default"  data-toggle="modal" data-target="#linkModal">普通链接</button>
-                <button type="button" class="btn btn-default"  data-toggle="modal" data-target="#linkModal-photo">图片链接</button>
+                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#linkModal">普通链接</button>
+                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#linkModal-photo">图片链接</button>
             </div>
 
             <div class="btn-group">
                 <button type="button" class="btn btn-default" onmouseup="addContent(this)" value="table">表格</button>
                 <button type="button" class="btn btn-default" onmouseup="addContent(this)" value="ul">无序结构</button>
             </div>
+<!--             <div class="btn-group">
+    <button type="button" class="btn btn-default" onmouseup="download()" value="download">下载</button>
+</div> -->
         </div>
     </div>
 
-    <form role="form" action="" method="post" >
-            <!--<div class="form-group">-->
-                <!--<input type="text" class="form-control" name="poster"  placeholder="作者" >-->
-            <!--</div>-->
+    <form role="form" action="download.php" method="post">
+        <!--<div class="form-group">-->
+        <!--<input type="text" class="form-control" name="poster"  placeholder="作者" >-->
+        <!--</div>-->
         <div class="container" style="margin-left: 5%">
             <div class="row" style="margin-top: 10px">
                 <label style="resize: none;width: 47%;float: left">编辑</label>
@@ -67,26 +73,24 @@
 
             </div>
             <div class="row" style="margin-top: 10px">
-                <textarea class="form-control" rows="28" name="content" id="content" style="resize: none;width: 47%;float: left" onkeyup="PreviewMarkdown()" ></textarea>
-                <div class="form-control"    style="resize: none;width: 47%;float: left;margin-left: 10px;background-color: white;height: 572px;overflow:auto;">
-                    <p id ="preview"></p>
+                <textarea class="form-control" rows="28" name="content" id="content" style="resize: none;width: 47%;float: left" onkeyup="PreviewMarkdown()"></textarea>
+                <div class="form-control" style="resize: none;width: 47%;float: left;margin-left: 10px;background-color: white;height: 572px;overflow:auto;">
+                    <p id="preview"></p>
                 </div>
             </div>
-            <!--<div class="row" style="margin-top: 10px;float: right">-->
-                <!--<button type="submit"  id="create" class="btn btn-default" style="margin-right: 15%" >下载</button>-->
-            <!--</div>-->
+            <div class="row" style="margin-top: 10px;float: right">
+                <button type="submit" id="create" class="btn btn-default" style="margin-right: 200px">下载</button>
+            </div>
         </div>
     </form>
     <!--<button id="PreviewButton" class="btn btn-default" style="float: right;margin-right: 10%" >Preview</button>-->
 
     <!--link 弹框-->
-    <div class="modal fade" id="linkModal" tabindex="-1" role="dialog"
-         aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="linkModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close"
-                            data-dismiss="modal" aria-hidden="true">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                         &times;
                     </button>
                     <h4 class="modal-title" id="myModalLabel">
@@ -95,8 +99,7 @@
                 </div>
                 <textarea name="linkInput" id="linkInput" cols="70" rows="1" style="resize: none;margin-right: 20px;margin-left: 20px;border: none">http://</textarea>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default"
-                            data-dismiss="modal">关闭
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
                     </button>
                     <button type="button" class="btn btn-primary" onclick="addContent(this)" value="link" data-dismiss="modal">
                         提交
@@ -106,13 +109,11 @@
         </div>
     </div>
     <!--link 弹框-->
-    <div class="modal fade" id="linkModal-photo" tabindex="-1" role="dialog"
-         aria-labelledby="photoModalLabel" aria-hidden="true">
+    <div class="modal fade" id="linkModal-photo" tabindex="-1" role="dialog" aria-labelledby="photoModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close"
-                            data-dismiss="modal" aria-hidden="true">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                         &times;
                     </button>
                     <h4 class="modal-title" id="photoModalLabel">
@@ -121,8 +122,7 @@
                 </div>
                 <textarea name="linkToPhoto" id="linkToPhoto" cols="70" rows="1" style="resize: none;margin-right: 20px;margin-left: 20px;border: none">http://</textarea>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default"
-                            data-dismiss="modal">关闭
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
                     </button>
                     <button type="button" class="btn btn-primary" onclick="addContent(this)" value="photoLink" data-dismiss="modal">
                         提交
@@ -135,11 +135,12 @@
 
 
 
-        <script>
-            var Content = document.getElementById("content");
-            Content.focus();
-        </script>
+    <script>
+        var Content = document.getElementById("content");
+        Content.focus();
+    </script>
 
 
 </body>
+
 </html>
