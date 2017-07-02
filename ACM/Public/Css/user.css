@@ -1,0 +1,100 @@
+.bg-black {
+    /*background-color: #000;*/
+    color: #FFF;
+}
+
+.bg-green {
+    /*background-color: green;*/
+    color: #FFF;
+}
+
+.top {
+    margin-top: 108px;
+}
+
+.login-left {
+    height: 450px;
+}
+
+.login-right {
+    height: 450px;
+}
+
+.login-form {
+    padding: 15px 38px;
+    margin-top: 75px;
+    height: 300px;
+    border-top: 1px #999 solid;
+    border-left: 1px #999 solid;
+    border-bottom: 1px #999 solid;
+    box-shadow: 5px 5px 5px -5px black, -5px 0 5px -5px black;
+    -moz-box-shadow: 5px 5px 5px -5px black, -5px 0 5px -5px black;
+    -webkit-box-shadow: 5px 5px 5px -5px black, -5px 0 5px -5px black;
+    /*box-shadow: 0 5px 4px -4px black;*/
+}
+
+.index-img {}
+
+.index-img img {
+    height: 100%;
+}
+
+.grey {
+    color: #a1a1a1;
+}
+
+.navbar-default {
+    background-color: #f2f2f2 !important;
+    color: #FFF;
+}
+
+.navbar-brand img {
+    height: 100%;
+}
+
+.brand-left {
+    margin-left: 2em;
+}
+
+.navbar2-brand {
+    width: 100%;
+}
+
+
+/* register */
+
+.register-top {
+    margin-top: 58px;
+    margin-bottom: 28px;
+}
+
+.re-box-shadow {
+    padding: 0px 50px 30px;
+    background-color: #fff;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2);
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.row-space-tiny {
+    margin-bottom: 4px;
+}
+
+.row-space-small {
+    margin-bottom: 16px;
+}
+
+.row-space-big {
+    margin-bottom: 26px;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.controls {
+    display: inline-block;
+}

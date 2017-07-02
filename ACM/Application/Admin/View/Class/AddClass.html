@@ -1,0 +1,114 @@
+<include file="Public/header" />
+<include file="Public/navbar" />
+<div class="container-fluid">
+    <div class="row">
+        <include file="Public/classleft" />
+        <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+            <ol class="breadcrumb">
+                <li><a href="{:U('Index/index')}">主页</a></li>
+                <li class="active">新增班级</li>
+            </ol>
+            <div class="col-md-7">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">新增班级</h3>
+                    </div>
+                    <form method="post">
+                        <div class="panel-body">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="clazzname">班级名称</label>
+                                    <input type="text" class="form-control" id="clazzname" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="tutor">指导老师</label>
+                                    <select class="form-control" id="tutor">
+                                        <foreach name="list" item="vo" >
+                                            <option value="{$vo.id}">{$vo.nickname}</option>
+                                        </foreach>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="grade">年级</label>
+                                    <input type="text" class="form-control" id="grade" placeholder="例如：2017" maxlength="4">
+                                </div>
+                                <div class="form-group">
+                                    <label for="level-inline">等级：</label>
+                                    <div class="radio-inline">
+                                        <label>
+                                    <input type="radio" name="level" id="optionsRadios1" value="1" checked>
+                                        初级
+                                    </label>
+                                    </div>
+                                    <div class="radio-inline">
+                                        <label>
+                                    <input type="radio" name="level" id="optionsRadios2" value="2">
+                                        中级
+                                    </label>
+                                    </div>
+                                    <div class="radio-inline">
+                                        <label>
+                                    <input type="radio" name="level" id="optionsRadios3" value="3">
+                                        高级
+                                    </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="grade">班级简介</label>
+                                    <textarea class="form-control" rows="8" id="clazzinfo" style="resize:none;"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <button type="button" class="btn btn-default" id="btn-add" style="width:25%;">确认</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function() {
+        $("#btn-add").click(function() {
+            var clazzname = $('#clazzname').val();
+            var tutor = $('#tutor').val();
+            var grade = $('#grade').val();
+            var level = $('input:radio[name="level"]:checked').val();
+            var clazzinfo = $('#clazzinfo').val();
+            var checkValue=$("#tutor").val();
+            $.ajax({
+                type: 'POST',
+                url: "{:U('Class/doAddClass')}",
+                data: {
+                    clazzname: clazzname,
+                    tutor: tutor,
+                    grade: grade,
+                    level: level,
+                    clazzinfo: clazzinfo
+                },
+                cache: false,
+                dataType: 'json',
+                timeout: 5000,
+                success: function(data) {
+                    if (data == 1) {
+                        alert("新增班级成功");
+                        document.location.href = "{:U('Class/AddClass')}";
+                    } else {
+                        alert(data);
+                    }
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("出错了，请重新尝试");
+                    console.log(XMLHttpRequest.status);
+                    console.log(XMLHttpRequest.readyState);
+                    console.log(textStatus);
+                },
+            });
+        });
+    });
+</script>
+<include file="Public/footer" />

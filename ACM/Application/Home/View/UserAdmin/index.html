@@ -1,0 +1,168 @@
+<include file="Public/header" />
+<include file="Public/navbar" />
+
+<div class="container-fluid" id="base">
+    <div class="row wrap">
+        <!-- 左侧 -->
+        <div class="col-md-9 baseLeft" style="min-height:400px;">
+            <div class="col-md-12 box">
+                <if condition="$right['level'] eq 0 ">
+                    <!-- 没有权限 -->
+                    <div class="alert alert-warning alert-dismissible fade in" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <strong>没有权限!</strong> 你没有加入班级或者没有班级管理权限。
+                    </div>
+                    <else />
+                    <!-- 拥有权限 -->
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">申请加入班级列表</div>
+                            <table class="table table-bordered">
+                                <if condition="$list">
+                                    <tr>
+                                        <th>姓名</th>
+                                        <th>详情</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    <volist name="list" id="item">
+                                        <tr>
+                                            <td>{$item.nickname}</td>
+                                            <td><a href="#" value="{$item.stu_id}" class="btn-stu-info">查看</a></td>
+                                            <td><a href="#" value="{$item.stu_id}" class="btn-stu-pass">通过</a></td>
+                                        </tr>
+                                    </volist>
+                                    <else />
+                                    <div class="center-block" style="text-align:center;padding:15px 0 0 0;">
+                                        <p class="lead">暂无申请</p>
+                                    </div>
+                                </if>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- <php>p($right);</php>
+                    <php>p($list);</php>
+                    <php>p($classid);</php> -->
+
+                </if>
+            </div>
+        </div>
+        <!-- 右侧 -->
+        <div class="col-md-3 baseRight">
+            {:W('Right/Personal')} {:W('Right/news')}
+        </div>
+    </div>
+</div>
+
+
+<!-- 学生信息 Modal -->
+<div class="modal fade bs-example-modal-sm" id="StuInfoModal" tabindex="-1" role="dialog" aria-labelledby="StuInfoModal">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="StuInfoLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered">
+                    <tr>
+                        <td>性别</td>
+                        <td id="stu_sex"></td>
+                    </tr>
+                    <tr>
+                        <td>学号</td>
+                        <td id="stu_id"></td>
+                    </tr>
+                    <tr>
+                        <td>学院</td>
+                        <td id="stu_institude"></td>
+                    </tr>
+                    <tr>
+                        <td>班级</td>
+                        <td id="stu_class"></td>
+                    </tr>
+                    <tr>
+                        <td>年级</td>
+                        <td id="stu_grade"></td>
+                    </tr>
+                    <tr>
+                        <td>联系电话</td>
+                        <td id="stu_phonenumber"></td>
+                    </tr>
+                    <tr>
+                        <td>邮箱地址</td>
+                        <td id="stu_email"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 学生信息 Modal End -->
+
+
+<script type="text/javascript">
+    $(function(){
+        //学生详情
+        $('.btn-stu-info').click(function() {
+            var id = $(this).attr('value');
+            $.ajax({
+                type: "get",
+                url: "{:U('returnOneStuInfo')}",
+                data: {
+                    id: id
+                },
+                cache: false,
+                dataType: 'json',
+                timeout: 5000,
+                success: function(data) {
+                    var data = eval('(' + data + ')');
+                    $('#StuInfoLabel').text(data.nickname);
+                    $('#stu_sex').text(data.sex);
+                    $('#stu_id').text(data.stu_id);
+                    $('#stu_institude').text(data.institude);
+                    $('#stu_class').text(data.class);
+                    $('#stu_grade').text(data.grade);
+                    $('#stu_phonenumber').text(data.phonenumber);
+                    $('#stu_email').text(data.email);
+                    $("#StuInfoModal").modal('show');
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("出错了，请重新尝试");
+                    console.log(XMLHttpRequest.status);
+                    console.log(XMLHttpRequest.readyState);
+                    console.log(textStatus);
+                },
+            });
+        });
+        //通过神恶化
+        $('.btn-stu-pass').click(function(){
+            var stuid = $(this).attr('value');
+            var classid = {$clazzid};
+            $.ajax({
+                type: "post",
+                url: "{:U('passStuSelect')}",
+                data: {
+                    stuid: stuid,
+                    classid: classid,
+                },
+                cache: false,
+                dataType: 'json',
+                timeout: 5000,
+                success: function(data) {
+                    if (data == 1) {
+                        alert("操作成功");
+                        window.location.reload();
+                    } else alert("未知错误");
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("出错了，请重新尝试");
+                    console.log(XMLHttpRequest.status);
+                    console.log(XMLHttpRequest.readyState);
+                    console.log(textStatus);
+                },
+            });
+        });
+    });
+</script>
+
+<include file="Public/footer" />

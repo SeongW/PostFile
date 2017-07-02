@@ -1,0 +1,90 @@
+<include file="Public/header" />
+<include file="Public/navbar" />
+
+<style media="screen">
+    .card {
+        background-color: #fff;
+        border: 1px solid #cfd8dc;
+        margin-bottom: 1.5rem;
+    }
+
+    .card-box {
+        text-align: center;
+        font-size: 2rem;
+        padding: 1rem 1rem !important;
+        background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+        color: #fff;
+        /*border-left: 5px solid #20a8d8;*/
+    }
+
+    .card-footer {
+        width: 100%;
+        padding: .5rem 2rem;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-top: 1px solid #cfd8dc;
+        /*font-size: 1rem !important;*/
+        color: #b0bec5 !important;
+        font-weight: 300;
+        display: block;
+    }
+
+    .card-footer a {
+        text-decoration: none;
+        color: #909e95;
+    }
+
+    .card-footer a:focus,
+    .card-footer a:hover {
+        color: #444;
+        border-bottom: 1px solid #444;
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="row">
+        <include file="Public/classleft" />
+        <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+            <ol class="breadcrumb">
+                <li><a href="{:U('Index/index')}">主页</a></li>
+                <li class="active">班级信息</li>
+            </ol>
+            <div class="col-sm-12">
+                <volist name="list" id="vo" empty="{$empty}">
+                    <!-- start -->
+                    <div class="col-sm-3">
+                        <div class="card">
+                            <div class="card-box clearfix">
+                                {$vo.clazzname} [
+                                <switch name="vo.level">
+                                    <case value="1">初级</case>
+                                    <case value="2">中级</case>
+                                    <case value="3">高级</case>
+                                    <default />未评级
+                                </switch>
+                                ]
+                            </div>
+                            <div class="card-footer">
+                                <div class="row">
+                                    <a href="__MODULE__/OneClass/{$vo.id}">查看详情</a>
+                                    <div class="pull-right"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end -->
+                </volist>
+            </div>
+            <div class="col-sm-6 col-sm-offset-3">
+                <nav aria-label="...">
+                    <ul class="pager">
+                        <li>{$page}</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<include file="Public/footer" />

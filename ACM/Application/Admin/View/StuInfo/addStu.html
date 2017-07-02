@@ -1,0 +1,163 @@
+<include file="Public/header" />
+<include file="Public/navbar" />
+<div class="container-fluid">
+    <div class="row">
+        <include file="Public/left" />
+        <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+            <ol class="breadcrumb">
+                <li><a href="{:U('Index/index')}">主页</a></li>
+                <li><a href="{:U('StuInfo/index')}">主页</a></li>
+                <li class="active">添加学生</li>
+            </ol>
+            <div class="col-md-7">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">添加学生</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form action="{:U('doAddStu2')}" class="form-horizontal" method="post">
+                            <p class="lead">账号信息</p>
+                            <div class="form-group">
+                                <label for="username" class="col-sm-2 control-label">账号</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="username" placeholder="以小写字母开头，长度为6-18" maxlength="20" name="username">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="username" class="col-sm-2 control-label">输入密码</label>
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" id="pwd1" placeholder="长度为6-18" maxlength="20" name="pwd1">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="username" class="col-sm-2 control-label">确认密码</label>
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" id="pwd2" placeholder="长度为6-18" maxlength="20" name="pwd2">
+                                </div>
+                            </div>
+                            <hr>
+                            <p class="lead">个人信息</p>
+                            <div class="form-group">
+                                <label for="username" class="col-sm-2 control-label">姓名</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="nickname" id="nickname" placeholder="" maxlength="20">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="level-inline" class="col-sm-2 control-label">性别：</label>
+                                <div class="radio-inline" >
+                                    <label>
+                                        <input type="radio" name="sex" id="optionsRadios1" value="1" checked>
+                                            男
+                                        </label>
+                                </div>
+                                <div class="radio-inline">
+                                    <label>
+                                        <input type="radio" name="sex" id="optionsRadios2" value="0">
+                                            女
+                                        </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="username" class="col-sm-2 control-label">联系电话</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="phonenumber" placeholder="" maxlength="11" name="phonenumber">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="username" class="col-sm-2 control-label">邮箱地址</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="email" placeholder="" maxlength="50" name="email">
+                                </div>
+                            </div>
+                            <hr>
+                            <p class="lead">在校信息</p>
+                            <div class="form-group">
+                                <label for="username" class="col-sm-2 control-label">学号</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="stu_id" placeholder="" maxlength="11" name="stu_id">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="username" class="col-sm-2 control-label">学院</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="institude" placeholder="" maxlength="50" name="institude">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="username" class="col-sm-2 control-label">班级</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="clazz" placeholder="" maxlength="20" name="clazz">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="username" class="col-sm-2 control-label">年级</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="grade" placeholder="年份" maxlength="4" name="grade">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="panel-footer">
+                        <button class="btn btn-default" type="button" name="button" id="btn-add">添加</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 修改信息modal end -->
+<script type="text/javascript">
+    $(function() {
+        //确认修改
+        $('#btn-add').click(function() {
+            var username = $('#username').val();
+            var pwd1 = $('#pwd1').val();
+            var pwd2 = $('#pwd2').val();
+            var nickname = $('#nickname').val();
+            var sex = $("input[name='sex'][checked]").val()
+            var phonenumber = $('#phonenumber').val();
+            var email = $('#email').val();
+            var stu_id = $('#stu_id').val();
+            var institude = $('#institude').val();
+            var clazz = $('#clazz').val();
+            var grade = $('#grade').val();
+            $.ajax({
+                type: 'post',
+                url: "{:U('doAddStu')}",
+                data: {
+                    username: username,
+                    pwd1: pwd1,
+                    pwd2: pwd2,
+                    nickname: nickname,
+                    sex: sex,
+                    phonenumber: phonenumber,
+                    email: email,
+                    stu_id: stu_id,
+                    institude: institude,
+                    clazz: clazz,
+                    grade: grade
+                },
+                cache: false,
+                dataType: 'json',
+                timeout: 5000,
+                success: function(data) {
+                    if (data == 1) {
+                        alert('添加成功');
+                        window.location.reload();
+                    } else alert(data);
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("出错了，请重新尝试");
+                    console.log(XMLHttpRequest.status);
+                    console.log(XMLHttpRequest.readyState);
+                    console.log(textStatus);
+                },
+            });
+        });
+    });
+</script>
+<include file="Public/footer" />

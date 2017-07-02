@@ -1,0 +1,97 @@
+<include file="Public/header" />
+<include file="Public/navbar" />
+<style media="screen">
+    a.info-link {
+        border-bottom: 1px solid #337ab7;
+        font-weight: bolder;
+    }
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <include file="Public/classleft" />
+        <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+            <ol class="breadcrumb">
+                <li><a href="{:U('Index/index')}">主页</a></li>
+                <li class="active">审批学生注册信息</li>
+            </ol>
+            <div class="col-md-12 col-sm-12">
+                <volist name="list" id="vo" empty="$empty">
+                    <div class="col-md-4 col-sm-4">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                申请
+                            </div>
+                            <div class="panel-body">
+                                <p><a href="#" class="info-link">{$vo.nickname}</a>申请加入<a href="" class="info-link">{$vo.clazzname}</a></p>
+                                <p>申请时间：2017-05-07 22:57:40</p>
+                            </div>
+                            <div class="panel-footer">
+                                <button class="btn btn-success" type="submit" value="{$vo.id}" id="pass">同意</button>
+                                <button class="btn btn-warning" type="submit" value="{$vo.id}" id="del">删除</button>
+                            </div>
+                        </div>
+                    </div>
+                </volist>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script type="text/javascript">
+    $(function() {
+        //通过
+        $('#pass').click(function(){
+            var id = $(this).val();
+            $.ajax({
+                type: 'POST',
+                url: "{:U('Check/passStuCheck')}",
+                data: {
+                    id: id,
+                },
+                cache: false,
+                dataType: 'json',
+                timeout: 5000,
+                success: function(data) {
+                    if(data == 1){
+                        alert('学生已加入该兴趣班');
+                        window.location.reload();
+                    } else alert(data);
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("出错了，请重新尝试");
+                    console.log(XMLHttpRequest.status);
+                    console.log(XMLHttpRequest.readyState);
+                    console.log(textStatus);
+                },
+            });
+        });
+        //删除
+        $('#del').click(function(){
+            var id = $(this).val();
+            $.ajax({
+                type: 'POST',
+                url: "{:U('Check/delStuCheck')}",
+                data: {
+                    id: id,
+                },
+                cache: false,
+                dataType: 'json',
+                timeout: 5000,
+                success: function(data) {
+                    if(data == 1){
+                        alert('已删除该学生的申请');
+                        window.location.reload();
+                    } else alert(data);
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("出错了，请重新尝试");
+                    console.log(XMLHttpRequest.status);
+                    console.log(XMLHttpRequest.readyState);
+                    console.log(textStatus);
+                },
+            });
+        });
+    });
+</script>
+
+<include file="Public/footer" />

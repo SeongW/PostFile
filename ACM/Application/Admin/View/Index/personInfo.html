@@ -1,0 +1,72 @@
+<include file="Public/header" />
+<include file="Public/navbar" />
+<div class="container-fluid">
+    <div class="row">
+        <include file="Public/left" />
+        <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+            <ol class="breadcrumb navroot">
+                <li><a href="{:U('Index/index')}">主页</a></li>
+                <li class="active">个人信息</li>
+            </ol>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong>用户</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="container">
+                        <div class="row">
+                            <dl class="dl-horizontal">
+                                <dt><h4>姓名：</h4></dt>
+                                <dd>
+                                    <h4><span class="userinfo gray">{$info[1]['nickname']}</span></h4></dd>
+                            </dl>
+                        </div>
+                        <div class="row">
+                            <dl class="dl-horizontal">
+                                <dt><h4>职称：</h4></dt>
+                                <dd>
+                                    <h4><span class="userinfo gray">{$info[1]['position']}</span></h4></dd>
+                            </dl>
+                        </div>
+                        <div class="row">
+                            <dl class="dl-horizontal">
+                                <dt><h4>联系电话：</h4></dt>
+                                <dd>
+                                    <h4><span class="userinfo gray">{$info[1]['phonenumber']}</span></h4></dd>
+                            </dl>
+                        </div>
+                        <div class="row">
+                            <dl class="dl-horizontal">
+                                <dt><h4>QQ：</h4></dt>
+                                <dd>
+                                    <h4><span class="userinfo gray">{$info[1]['tecentnumber']}</span></h4></dd>
+                            </dl>
+                        </div>
+                        <div class="row">
+                            <dl class="dl-horizontal">
+                                <dt><h4>E-mail：</h4></dt>
+                                <dd>
+                                    <h4><span class="userinfo gray">{$info[1]['email']}</span></h4></dd>
+                            </dl>
+                        </div>
+                        <div class="row">
+                            <dl class="dl-horizontal">
+                                <dt><h4>上次登陆：</h4></dt>
+                                <dd>
+                                    <h4><span class="userinfo gray">{$info[1]['lastlogintime']}</span></h4></dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <div class="row">
+                                <a href="{:U('Index/modPersonal')}"><button type="button" class="btn btn-primary">修改信息</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<include file="Public/footer" />

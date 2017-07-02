@@ -1,0 +1,377 @@
+.main {
+    margin-top: 51px;
+    display: block;
+    padding: 0px;
+}
+
+
+/* navbar */
+
+.navbar-inverse {
+    background-color: #65CEA7;
+    border-color: #65CEA7;
+}
+
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+}
+
+.navbar-brand {
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.navbar-brand span {
+    color: #f2f2f2;
+}
+
+.user-menu {
+    display: inline-block;
+    margin-top: 14px;
+    margin-right: 10px;
+    float: right;
+    list-style: none;
+    padding: 0;
+}
+
+.navbar-brand span.houtai {
+    color: #fff;
+    margin-left: .5rem;
+}
+
+span.navbar-span {
+    margin-left: .5rem;
+}
+
+.user-menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.pull-right {
+    float: right !important;
+}
+
+
+/*sidebar*/
+
+
+/* 小于768px的话 */
+
+@media (min-width: 768px) {
+    .sidebar {
+        display: block;
+        position: fixed;
+        top: 50px;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        display: block;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #424f63;
+        box-shadow: 1px 0px 10px rgba(0, 0, 0, .05);
+    }
+    .navbar-header {
+        width: 100%;
+    }
+}
+
+.form-control {
+    border: 1px solid #ccc;
+    box-shadow: none;
+}
+
+.form-control:focus {
+    border: 1px solid #000;
+    outline: 0;
+    box-shadow: inset 0px 0px 0px 1px #f2f2f2;
+}
+
+.collapse .in {
+    display: block
+}
+
+.sidebar form {
+    padding: 20px 15px 5px 15px;
+    margin-bottom: 20px;
+}
+
+.nav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.nav>li {
+    position: relative;
+    display: block
+}
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px
+}
+
+.sidebar ul.nav a {
+    color: #fff;
+    text-decoration: none
+}
+
+.sidebar ul.nav .active a {
+    color: #fff;
+    background-color: #424f63 !important;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+    color: #000;
+    background-color: #f2f2f2;
+}
+
+.sidebar ul.nav .active>a:hover, .sidebar ul.nav li.parent a.active:hover, .sidebar ul.nav .active>a:focus, .sidebar ul.nav li.parent a.active:focus {
+    color: #fff;
+    background-color: #f2f2f2;
+}
+
+.sidebar span.glyphicon {
+    margin-right: 10px;
+}
+
+.sidebar ul.nav ul.children {
+    width: auto;
+    padding: 0;
+    margin: 0;
+    background-color: #424f63;
+}
+
+.sidebar ul.nav li.parent ul li a {
+    border: none;
+    display: block;
+    padding-left: 30px;
+    line-height: 40px;
+}
+
+.sidebar ul.nav ul.children li a {
+    height: 40px;
+    background: #424f63;
+    color: #fff;
+}
+
+.sidebar ul.nav ul.children li a:hover, .sidebar ul.nav ul.children li a:focus {
+    color: #000;
+    background-color: #f2f2f2;
+}
+
+.sidebar ul.nav li.divider {
+    /*border-bottom: 1px solid #eee;*/
+    margin: 20px 0;
+}
+
+.badge {
+    margin-left: 5px;
+}
+
+.active .badge {
+    background-color: #FFF;
+    color: #30a5ff;
+}
+
+.sidebar .attribution {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    border-top: 1px solid #eee;
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    .sidebar .attribution {
+        display: none;
+    }
+    .sidebar {
+        margin-top: 50px;
+    }
+}
+
+
+/* nav root  */
+
+.navroot {
+    display: none;
+}
+
+
+/* 超小设备（手机，小于 768px） */
+
+
+/* Bootstrap 中默认情况下没有媒体查询 */
+
+
+/* 小型设备（平板电脑，768px 起） */
+
+@media (min-width: 768px) {
+    .navroot {
+        display: block;
+    }
+}
+
+span.userinfo {
+    margin-left: .5rem;
+    color: #555;
+}
+
+.breadcrumb {
+    background-color: #f2f2f2;
+    border-radius: 0px;
+    border-bottom: 2px solid #888;
+}
+
+.breadcrumb li>a {
+    color: #000;
+}
+
+.breadcrumb>li+li:before {
+    padding: 0 5px;
+    color: #aaa;
+    content: "/\00a0";
+}
+
+.breadcrumb>.active {
+    color: #aaa;
+}
+
+
+/*card*/
+
+
+/*panel card*/
+
+.states-info {
+    color: #fff;
+}
+
+.states-info .red-bg {
+    background: #FC8675;
+}
+
+.states-info .blue-bg {
+    background: #5AB6DF;
+}
+
+.states-info .green-bg {
+    background: #65CEA7;
+}
+
+.states-info .yellow-bg {
+    background: #EBC85E;
+}
+
+.panel {
+    border: none;
+}
+
+.states-info i {
+    font-size: 50px;
+}
+
+.states-info .state-title {
+    font-size: 13px;
+}
+
+.states-info h4 {
+    margin-bottom: 0;
+}
+
+
+/*panel card end*/
+
+
+/*btn*/
+
+.btn {
+    border-radius: 0px
+}
+
+.btn-primary {
+    background-color: #424F63;
+    border-color: #374152;
+    color: #FFFFFF;
+}
+
+
+/*btn end*/
+
+
+/*profile*/
+
+.profile-desk {}
+
+.profile-desk h1 {
+    color: #49586e;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+}
+
+.profile-desk .designation {
+    color: #49586e;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+.profile-desk p {
+    line-height: 25px;
+    margin-bottom: 40px;
+}
+
+.p-follow-btn {
+    background: #eff0f4;
+    color: #a4a4a4
+}
+
+
+/*profile end*/
+
+
+/*table*/
+
+table.tb-list {
+    background-color: #DFEFF0;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #fff;
+}
+
+
+/*table end*/
+
+
+/*panel*/
+
+.panel-footer {
+    padding: 10px 15px;
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    border-top: 1px solid #ddd;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px
+}
+
+
+/*panel end*/

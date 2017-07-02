@@ -1,0 +1,55 @@
+<include file="Public/header" />
+<include file="Public/navbar" />
+<div class="container-fluid">
+    <div class="row">
+        <include file="Public/sysleft" />
+        <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+            <ol class="breadcrumb">
+                <li><a href="{:U('Index/index')}">主页</a></li>
+                <li class="active">数据导出</li>
+            </ol>
+            <div class="col-sm-12 col-md-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">全部学生</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-sm-3" style="text-align:center;margin-bottom:15px;">
+                            <a class="btn btn-primary" href="{:U('doExcelAllStu')}" role="button" style="width:100%;">导出所有学生信息</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">按年级导出</h3>
+                    </div>
+                    <div class="panel-body">
+                        <volist name="gradeList" id="item">
+                            <div class="col-sm-3" style="text-align:center;margin-bottom:15px;">
+                                <a class="btn btn-primary" href="{:U('doExcelGradeStu')}?grade={$item.grade}" role="button" style="width:100%;">{$item.grade}级</a>
+                            </div>
+                        </volist>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">按班级导出</h3>
+                    </div>
+                    <div class="panel-body">
+                        <volist name="classList" id="item">
+                            <div class="col-sm-3" style="text-align:center;margin-bottom:15px;">
+                                <a class="btn btn-primary" href="{:U('doExcelOneClass')}?id={$item.id}" role="button" style="width:100%;">{$item.clazzname}{$item.level}</a>
+                            </div>
+                        </volist>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<include file="Public/footer" />

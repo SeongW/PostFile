@@ -1,0 +1,1743 @@
+[ 2017-06-10T02:17:46+08:00 ] ::1 /sys/admin.php/Check/CheckStuSign.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000274s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000306s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000390s ]
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE ( is_passed=0 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`nickname`,`institude`,`grade` FROM `acm_user` WHERE `is_passed` = 0 LIMIT 0,8   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000153s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000183s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000262s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000122s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000187s ]
+SQL: SHOW COLUMNS FROM `acm_check_clazz` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_check_clazz` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000205s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.001793s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001899s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001549s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.001793s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000017s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.003225s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000596s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000797s ]
+
+[ 2017-06-10T02:17:48+08:00 ] ::1 /sys/admin.php/Check/passStuSign.html?id=50&_=1497032266084
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000322s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000343s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000433s ]
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0005s ]
+SQL: UPDATE `acm_user` SET `is_passed`='1' WHERE `id` = 50 [ RunTime:0.0006s ]
+
+[ 2017-06-10T02:17:50+08:00 ] ::1 /sys/admin.php/Check/CheckStuSign.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000321s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000408s ]
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE ( is_passed=0 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`nickname`,`institude`,`grade` FROM `acm_user` WHERE `is_passed` = 0 LIMIT 0,8   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000141s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `acm_check_clazz` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_check_clazz` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000201s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000283s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000145s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000217s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001630s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000283s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000016s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001196s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000604s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000763s ]
+
+[ 2017-06-10T02:18:27+08:00 ] ::1 /sys/admin.php/Check/CheckStuSign.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000361s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000342s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000426s ]
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE ( is_passed=0 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`nickname`,`institude`,`grade` FROM `acm_user` WHERE `is_passed` = 0 LIMIT 0,8   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000203s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000518s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000622s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000159s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000237s ]
+SQL: SHOW COLUMNS FROM `acm_check_clazz` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_check_clazz` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000203s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.001867s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000020s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001909s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001401s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.001867s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000016s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.003092s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000633s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000761s ]
+
+[ 2017-06-10T02:18:29+08:00 ] ::1 /sys/admin.php/ShowStuInfo/50
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000294s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000462s ]
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`nickname`,`institude`,`class`,`grade`,`email`,`stu_id`,`sex`,`phonenumber` FROM `acm_user` WHERE `id` = 50  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000101s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000265s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000249s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000337s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000144s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000215s ]
+SQL: SHOW COLUMNS FROM `acm_check_clazz` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_check_clazz` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000313s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.002249s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000030s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.002501s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004357s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.002249s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000032s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.006553s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001474s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001665s ]
+
+[ 2017-06-10T02:18:31+08:00 ] ::1 /sys/admin.php/Check/passStuSign.html?id=50&_=1497032309842
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000386s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000310s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000378s ]
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0005s ]
+SQL: UPDATE `acm_user` SET `is_passed`='1' WHERE `id` = 50 [ RunTime:0.0011s ]
+
+[ 2017-06-10T02:18:34+08:00 ] ::1 /sys/admin.php/Check/CheckStuSign.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000384s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000728s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001090s ]
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE ( is_passed=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id`,`nickname`,`institude`,`grade` FROM `acm_user` WHERE `is_passed` = 0 LIMIT 0,8   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000143s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000167s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000237s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000113s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000175s ]
+SQL: SHOW COLUMNS FROM `acm_check_clazz` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_check_clazz` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000190s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.001564s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001658s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001442s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.001564s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000016s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.002895s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000527s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000673s ]
+
+[ 2017-06-10T02:19:42+08:00 ] ::1 /sys/admin.php/Check/CheckStuSign.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001282s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001580s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001856s ]
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE ( is_passed=0 ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT `id`,`nickname`,`institude`,`grade` FROM `acm_user` WHERE `is_passed` = 0 LIMIT 0,8   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000088s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000606s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000702s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000831s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000375s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000513s ]
+SQL: SHOW COLUMNS FROM `acm_check_clazz` [ RunTime:0.0014s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_check_clazz` LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000433s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.009099s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000033s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.009383s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005665s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.009099s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000035s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.014464s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001989s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003389s ]
+
+[ 2017-06-10T02:19:43+08:00 ] ::1 /sys/admin.php/Check/passStuSign.html?id=14&_=1497032382459
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000354s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000414s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000502s ]
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0006s ]
+SQL: UPDATE `acm_user` SET `is_passed`='1' WHERE `id` = 14 [ RunTime:0.0006s ]
+
+[ 2017-06-10T02:19:44+08:00 ] ::1 /sys/admin.php/Check/CheckStuSign.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000496s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000656s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000768s ]
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE ( is_passed=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id`,`nickname`,`institude`,`grade` FROM `acm_user` WHERE `is_passed` = 0 LIMIT 0,8   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000062s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000135s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `acm_check_clazz` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_check_clazz` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000208s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000285s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000139s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000219s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001699s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000285s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000020s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001281s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000623s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000797s ]
+
+[ 2017-06-10T02:21:08+08:00 ] ::1 /sys/admin.php/Check/CheckStuSign.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000252s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000276s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000356s ]
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE ( is_passed=0 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`nickname`,`institude`,`grade` FROM `acm_user` WHERE `is_passed` = 0 LIMIT 0,8   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000140s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000178s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000122s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000184s ]
+SQL: SHOW COLUMNS FROM `acm_check_clazz` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_check_clazz` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000218s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.001814s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000050s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001987s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001700s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.001814s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.003413s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001042s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002597s ]
+
+[ 2017-06-10T02:22:53+08:00 ] ::1 /sys/admin.php/Check/CheckStuSign.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000213s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001170s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001103s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001208s ]
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE ( is_passed=0 ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `id`,`nickname`,`institude`,`grade` FROM `acm_user` WHERE `is_passed` = 0 LIMIT 0,8   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000187s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000471s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000738s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000386s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000458s ]
+SQL: SHOW COLUMNS FROM `acm_check_clazz` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_check_clazz` LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000553s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.003895s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.004200s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003143s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.003895s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000027s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.006669s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001820s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002276s ]
+
+[ 2017-06-10T02:22:54+08:00 ] ::1 /sys/admin.php/Check/passStuSign.html?id=50&_=1497032573504
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000434s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000286s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000350s ]
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0005s ]
+SQL: UPDATE `acm_user` SET `is_passed`='1' WHERE `id` = 50 [ RunTime:0.0010s ]
+
+[ 2017-06-10T02:22:54+08:00 ] ::1 /sys/admin.php/Check/CheckStuSign.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000305s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000359s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000437s ]
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE ( is_passed=0 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`nickname`,`institude`,`grade` FROM `acm_user` WHERE `is_passed` = 0 LIMIT 0,8   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000173s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000558s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000658s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000159s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000241s ]
+SQL: SHOW COLUMNS FROM `acm_check_clazz` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_check_clazz` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000227s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.002199s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.002264s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001663s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.002199s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000026s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.003724s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001142s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001332s ]
+
+[ 2017-06-10T02:25:41+08:00 ] ::1 /sys/admin.php/Check/Che123.thml
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000690s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000792s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000964s ]
+ERR: 非法操作:Che123.thml
+
+[ 2017-06-10T02:25:47+08:00 ] ::1 /sys/admin.php/Check/Che123.thml
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000262s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000341s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000418s ]
+ERR: 非法操作:Che123.thml
+
+[ 2017-06-10T02:25:48+08:00 ] ::1 /sys/admin.php/Check/Che123.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000386s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000498s ]
+ERR: 非法操作:Che123
+
+[ 2017-06-10T02:27:21+08:00 ] ::1 /sys/admin.php/Check/Che123.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000662s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000686s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000812s ]
+ERR: 非法操作:Che123
+
+[ 2017-06-10T02:31:33+08:00 ] ::1 /sys/admin.php/Check/Che123.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000842s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000993s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001137s ]
+ERR: 非法操作:Che123
+
+[ 2017-06-10T02:31:52+08:00 ] ::1 /sys/admin.php/Check/Che123.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000496s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000508s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000634s ]
+ERR: 非法操作:Che123
+
+[ 2017-06-10T02:34:09+08:00 ] ::1 /sys/admin.php/Check/Che123.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000981s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000959s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001155s ]
+ERR: 非法操作:Che123
+
+[ 2017-06-10T02:35:37+08:00 ] ::1 /sys/admin.php/Check/Che123.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000336s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000304s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000385s ]
+ERR: 非法操作:Che123
+
+[ 2017-06-10T02:36:22+08:00 ] ::1 /sys/admin.php/Check/Che123.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000641s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000436s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000540s ]
+ERR: 非法操作:Che123
+
+[ 2017-06-10T02:36:42+08:00 ] ::1 /sys/admin.php/Check/Che123.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000459s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000598s ]
+ERR: 非法操作:Che123
+
+[ 2017-06-10T02:36:42+08:00 ] ::1 /sys/admin.php/Check/Che123.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000244s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000260s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000333s ]
+ERR: 非法操作:Che123
+
+[ 2017-06-10T02:36:43+08:00 ] ::1 /sys/admin.php/Check/Che123.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000307s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000392s ]
+ERR: 非法操作:Che123
+
+[ 2017-06-10T02:37:06+08:00 ] ::1 /sys/admin.php/Check/Che123.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000795s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002895s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005016s ]
+ERR: 非法操作:Che123
+
+[ 2017-06-10T02:37:13+08:00 ] ::1 /sys/admin.php/Check/Che123.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000397s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000396s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000533s ]
+ERR: 非法操作:Che123
+
+[ 2017-06-10T02:37:25+08:00 ] ::1 /sys/admin.php/Check/Che123.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000311s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000517s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000692s ]
+ERR: 非法操作:Che123
+
+[ 2017-06-10T02:37:39+08:00 ] ::1 /sys/admin.php/Check/Che123.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000249s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000270s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000342s ]
+ERR: 非法操作:Che123
+
+[ 2017-06-10T02:37:46+08:00 ] ::1 /sys/admin.php/Check/Che123.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000078s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000288s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000366s ]
+ERR: 非法操作:Che123
+
+[ 2017-06-10T02:38:52+08:00 ] ::1 /sys/admin.php/Check/Che123.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000628s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000552s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000672s ]
+ERR: 非法操作:Che123
+
+[ 2017-06-10T02:39:03+08:00 ] ::1 /sys/admin.php/Check/Che123.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000333s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000342s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000434s ]
+ERR: 非法操作:Che123
+
+[ 2017-06-10T02:40:05+08:00 ] ::1 /sys/admin.php/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000299s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000889s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001133s ]
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0016s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `acm_clazz` [ RunTime:0.0008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_clazz` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `acm_admin` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_admin` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `acm_todaylogin` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_todaylogin` WHERE ( to_days(datetime) = to_days(now()) ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `acm_inform` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `acm_inform`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000175s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000526s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000678s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000498s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000600s ]
+SQL: SHOW COLUMNS FROM `acm_check_clazz` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_check_clazz` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000543s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.002389s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.002431s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001561s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.002389s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000019s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.003430s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001142s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001354s ]
+
+[ 2017-06-10T02:40:05+08:00 ] ::1 /sys/admin.php/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000264s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000347s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000429s ]
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `acm_clazz` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_clazz` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `acm_admin` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_admin` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `acm_todaylogin` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_todaylogin` WHERE ( to_days(datetime) = to_days(now()) ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `acm_inform` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `acm_inform`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000230s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000329s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000251s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000360s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000198s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000291s ]
+SQL: SHOW COLUMNS FROM `acm_check_clazz` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_check_clazz` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000207s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.002842s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000018s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.002817s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001153s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.002842s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000017s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.003766s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000737s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000858s ]
+
+[ 2017-06-10T02:41:09+08:00 ] ::1 /sys/admin.php/Check/CheckStuSign.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000247s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000265s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000338s ]
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE ( is_passed=0 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`nickname`,`institude`,`grade` FROM `acm_user` WHERE `is_passed` = 0 LIMIT 0,8   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000169s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000202s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000293s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000128s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000192s ]
+SQL: SHOW COLUMNS FROM `acm_check_clazz` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_check_clazz` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000201s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.001892s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000019s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001968s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001380s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.001892s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000019s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.003150s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001026s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001366s ]
+
+[ 2017-06-10T02:41:10+08:00 ] ::1 /sys/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000250s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000259s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000332s ]
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `acm_clazz` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_clazz` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `acm_admin` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_admin` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `acm_todaylogin` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_todaylogin` WHERE ( to_days(datetime) = to_days(now()) ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `acm_inform` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `acm_inform`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000160s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000197s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000280s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000131s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000206s ]
+SQL: SHOW COLUMNS FROM `acm_check_clazz` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_check_clazz` LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000254s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.002007s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000019s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.002126s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001081s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.002007s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000017s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.002946s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000562s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000649s ]
+
+[ 2017-06-10T02:41:10+08:00 ] ::1 /sys/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000289s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000270s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000347s ]
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `acm_clazz` [ RunTime:0.0009s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_clazz` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `acm_admin` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_admin` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `acm_todaylogin` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_todaylogin` WHERE ( to_days(datetime) = to_days(now()) ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `acm_inform` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `acm_inform`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000157s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000196s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000286s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000129s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000204s ]
+SQL: SHOW COLUMNS FROM `acm_check_clazz` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_check_clazz` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000483s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.002014s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.002417s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001517s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.002014s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.003445s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001575s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001744s ]
+
+[ 2017-06-10T02:41:13+08:00 ] ::1 /sys/admin.php/Database/ShowExport.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000306s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000291s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000368s ]
+SQL: SHOW TABLE STATUS [ RunTime:0.0021s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000072s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000160s ]
+NOTIC: [8] Undefined variable: name /Library/WebServer/Documents/sys/Application/Runtime/Cache/Admin/630a07003a26008c48356c9049b49302.php 第 40 行.
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000223s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000306s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000140s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000213s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001611s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000306s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000017s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001200s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000992s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001367s ]
+
+[ 2017-06-10T02:41:14+08:00 ] ::1 /sys/admin.php/Database/export.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000439s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000545s ]
+
+[ 2017-06-10T02:41:14+08:00 ] ::1 /sys/admin.php/Database/export.html?id=0&start=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000269s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000325s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000403s ]
+SQL: SHOW CREATE TABLE `acm_admin` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS count FROM `acm_admin` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `acm_admin` LIMIT 0, 1000 [ RunTime:0.0004s ]
+
+[ 2017-06-10T02:41:14+08:00 ] ::1 /sys/admin.php/Database/export.html?id=1&start=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000246s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000273s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000339s ]
+SQL: SHOW CREATE TABLE `acm_check_clazz` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS count FROM `acm_check_clazz` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `acm_check_clazz` LIMIT 0, 1000 [ RunTime:0.0005s ]
+
+[ 2017-06-10T02:41:14+08:00 ] ::1 /sys/admin.php/Database/export.html?id=2&start=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000246s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000311s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000386s ]
+SQL: SHOW CREATE TABLE `acm_clazz` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS count FROM `acm_clazz` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `acm_clazz` LIMIT 0, 1000 [ RunTime:0.0006s ]
+
+[ 2017-06-10T02:41:14+08:00 ] ::1 /sys/admin.php/Database/export.html?id=3&start=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000279s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000343s ]
+SQL: SHOW CREATE TABLE `acm_clazz_work` [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS count FROM `acm_clazz_work` [ RunTime:0.0002s ]
+SQL: SELECT * FROM `acm_clazz_work` LIMIT 0, 1000 [ RunTime:0.0002s ]
+
+[ 2017-06-10T02:41:15+08:00 ] ::1 /sys/admin.php/Database/export.html?id=4&start=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000379s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000561s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000695s ]
+SQL: SHOW CREATE TABLE `acm_inform` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS count FROM `acm_inform` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `acm_inform` LIMIT 0, 1000 [ RunTime:0.0003s ]
+
+[ 2017-06-10T02:41:15+08:00 ] ::1 /sys/admin.php/Database/export.html?id=5&start=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000254s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000264s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000326s ]
+SQL: SHOW CREATE TABLE `acm_todaylogin` [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS count FROM `acm_todaylogin` [ RunTime:0.0002s ]
+SQL: SELECT * FROM `acm_todaylogin` LIMIT 0, 1000 [ RunTime:0.0003s ]
+
+[ 2017-06-10T02:41:15+08:00 ] ::1 /sys/admin.php/Database/export.html?id=6&start=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000336s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000354s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000442s ]
+SQL: SHOW CREATE TABLE `acm_user` [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS count FROM `acm_user` [ RunTime:0.0002s ]
+SQL: SELECT * FROM `acm_user` LIMIT 0, 1000 [ RunTime:0.0004s ]
+
+[ 2017-06-10T02:41:15+08:00 ] ::1 /sys/admin.php/Database/export.html?id=7&start=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000250s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000266s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000330s ]
+SQL: SHOW CREATE TABLE `acm_user_admin` [ RunTime:0.0003s ]
+SQL: SELECT COUNT(*) AS count FROM `acm_user_admin` [ RunTime:0.0002s ]
+
+[ 2017-06-10T02:41:15+08:00 ] ::1 /sys/admin.php/Database/export.html?id=8&start=0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000309s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001210s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001488s ]
+SQL: SHOW CREATE TABLE `acm_user_clazz` [ RunTime:0.0002s ]
+SQL: SELECT COUNT(*) AS count FROM `acm_user_clazz` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `acm_user_clazz` LIMIT 0, 1000 [ RunTime:0.0003s ]
+
+[ 2017-06-10T02:41:15+08:00 ] ::1 /sys/admin.php/Excel/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000249s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000264s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000337s ]
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0007s ]
+SQL: SELECT DISTINCT  `grade` FROM `acm_user` ORDER BY grade  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `acm_clazz` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`clazzname`,`level` FROM `acm_clazz`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000070s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000178s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000206s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000284s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000129s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000192s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002184s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000284s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000018s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001851s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000631s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000851s ]
+
+[ 2017-06-10T02:41:16+08:00 ] ::1 /sys/admin.php/Database/ShowImport.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000354s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000296s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000376s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000117s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000474s ]
+NOTIC: [8] Undefined variable: name /Library/WebServer/Documents/sys/Application/Runtime/Cache/Admin/a2ccf40a7d7447150b41ee64d32a92aa.php 第 40 行.
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000195s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000269s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000120s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000183s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002033s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000269s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000016s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001647s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000659s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001262s ]
+
+[ 2017-06-10T02:41:20+08:00 ] ::1 /sys/admin.php/Database/MyImport.html?time=1497033674&_=1497033676585
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000435s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000466s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000578s ]
+SQL: -- -----------------------------
+-- Think MySQL Data Transfer 
+-- 
+-- Host     : 127.0.0.1
+-- Port     : 3306
+-- Database : acmsys
+-- 
+-- Part : #1
+-- Date : 2017-06-10 02:41:14
+-- -----------------------------
+
+SET FOREIGN_KEY_CHECKS = 0;
+ [ RunTime:0.0003s ]
+SQL: 
+
+-- -----------------------------
+-- Table structure for `acm_admin`
+-- -----------------------------
+DROP TABLE IF EXISTS `acm_admin`;
+ [ RunTime:0.0047s ]
+SQL: CREATE TABLE `acm_admin` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  `password_md5` varchar(40) DEFAULT NULL,
+  `nickname` varchar(20) NOT NULL,
+  `signUpTime` datetime DEFAULT NULL,
+  `lastLoginTime` datetime DEFAULT NULL,
+  `phoneNumber` varchar(45) DEFAULT '空',
+  `email` varchar(50) DEFAULT '空',
+  `position` varchar(45) DEFAULT '空',
+  `tecentNumber` varchar(45) DEFAULT '空',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username_UNIQUE` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+ [ RunTime:0.0103s ]
+SQL: 
+-- -----------------------------
+-- Records of `acm_admin`
+-- -----------------------------
+INSERT INTO `acm_admin` VALUES ('1', 'admin1', '123456', '202cb962ac59075b964b07152d234b70', '艾正文', '2017-03-10 00:00:00', '2017-06-10 02:16:56', '13600328498', 'admin@qq.com', '老师', '306774585');
+ [ RunTime:0.0007s ]
+SQL: INSERT INTO `acm_admin` VALUES ('2', 'admin2', '123456', 'e10adc3949ba59abbe56e057f20f883e', '狄涵亮', '2017-05-12 20:53:27', '2017-05-12 20:53:27', '13600328498', 'admin1@qq.com', '老师', '3076888475');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_admin` VALUES ('3', 'admin3', '123456', 'e10adc3949ba59abbe56e057f20f883e', '延立轩', '2017-05-12 20:53:38', '2017-05-12 20:53:38', '13600328498', 'admin@qq.com', '老师', '1231235235');
+ [ RunTime:0.0004s ]
+SQL: 
+-- -----------------------------
+-- Table structure for `acm_check_clazz`
+-- -----------------------------
+DROP TABLE IF EXISTS `acm_check_clazz`;
+ [ RunTime:0.0045s ]
+SQL: CREATE TABLE `acm_check_clazz` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_clazz` int(11) NOT NULL,
+  `id_stu` int(11) NOT NULL,
+  `checktime` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `stu_idx` (`id_stu`),
+  KEY `clazz_idx` (`id_clazz`),
+  CONSTRAINT `clazz` FOREIGN KEY (`id_clazz`) REFERENCES `acm_clazz` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `stu` FOREIGN KEY (`id_stu`) REFERENCES `acm_user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+ [ RunTime:0.0097s ]
+SQL: 
+-- -----------------------------
+-- Records of `acm_check_clazz`
+-- -----------------------------
+INSERT INTO `acm_check_clazz` VALUES ('1', '1', '5', '2017-06-08 00:23:12');
+ [ RunTime:0.0007s ]
+SQL: INSERT INTO `acm_check_clazz` VALUES ('2', '1', '6', '2017-06-08 00:23:12');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_check_clazz` VALUES ('3', '1', '7', '2017-06-08 00:23:12');
+ [ RunTime:0.0006s ]
+SQL: 
+-- -----------------------------
+-- Table structure for `acm_clazz`
+-- -----------------------------
+DROP TABLE IF EXISTS `acm_clazz`;
+ [ RunTime:0.0030s ]
+SQL: CREATE TABLE `acm_clazz` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `clazzname` varchar(45) NOT NULL,
+  `create_time` datetime DEFAULT NULL,
+  `tutor` int(11) DEFAULT NULL,
+  `last_time_modify` datetime DEFAULT NULL,
+  `clazz_info` varchar(255) DEFAULT NULL,
+  `grade` int(11) DEFAULT NULL,
+  `level` int(3) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+ [ RunTime:0.0075s ]
+SQL: 
+-- -----------------------------
+-- Records of `acm_clazz`
+-- -----------------------------
+INSERT INTO `acm_clazz` VALUES ('1', 'ACM-A', '2017-05-20 00:00:00', '1', '2017-05-20 00:00:00', '16级学生ACM兴趣班', '2016', '2');
+ [ RunTime:0.0007s ]
+SQL: INSERT INTO `acm_clazz` VALUES ('2', 'ACM-S', '2017-05-19 00:00:00', '2', '2017-05-19 00:00:00', '17级学生ACM兴趣班', '2017', '1');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_clazz` VALUES ('3', 'ACM-M', '2017-06-09 00:00:00', '3', '2017-06-09 00:00:00', '13级ACM初级兴趣班', '2013', '1');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_clazz` VALUES ('4', 'ACM-plus', '2017-06-09 00:00:00', '2', '2017-06-09 00:00:00', '班级', '2017', '2');
+ [ RunTime:0.0005s ]
+SQL: INSERT INTO `acm_clazz` VALUES ('5', 'ACM-P', '2017-06-10 00:00:00', '3', '2017-06-10 00:00:00', '计算机班', '2014', '3');
+ [ RunTime:0.0004s ]
+SQL: 
+-- -----------------------------
+-- Table structure for `acm_clazz_work`
+-- -----------------------------
+DROP TABLE IF EXISTS `acm_clazz_work`;
+ [ RunTime:0.0039s ]
+SQL: CREATE TABLE `acm_clazz_work` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `workcontent` varchar(45) DEFAULT '空',
+  `createtime` datetime DEFAULT NULL,
+  `clazz_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+ [ RunTime:0.0085s ]
+SQL: 
+-- -----------------------------
+-- Records of `acm_clazz_work`
+-- -----------------------------
+INSERT INTO `acm_clazz_work` VALUES ('1', '本周五（20号）下午开会', '2017-05-16 14:38:48', '1');
+ [ RunTime:0.0007s ]
+SQL: INSERT INTO `acm_clazz_work` VALUES ('4', '本周五（20号）五下午开会', '2017-05-16 14:50:02', '2');
+ [ RunTime:0.0003s ]
+SQL: INSERT INTO `acm_clazz_work` VALUES ('5', '事务内容', '2017-06-09 02:08:19', '3');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_clazz_work` VALUES ('6', '事务内容', '2017-06-09 19:57:23', '4');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_clazz_work` VALUES ('8', '事务内容', '2017-06-10 00:52:53', '5');
+ [ RunTime:0.0004s ]
+SQL: 
+-- -----------------------------
+-- Table structure for `acm_inform`
+-- -----------------------------
+DROP TABLE IF EXISTS `acm_inform`;
+ [ RunTime:0.0031s ]
+SQL: CREATE TABLE `acm_inform` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(45) NOT NULL DEFAULT '空',
+  `datetime` datetime NOT NULL,
+  `content` varchar(45) NOT NULL DEFAULT '暂时无通知',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+ [ RunTime:0.0080s ]
+SQL: 
+-- -----------------------------
+-- Records of `acm_inform`
+-- -----------------------------
+INSERT INTO `acm_inform` VALUES ('1', '关于申请班级事项', '2017-03-22 00:22:33', '通过注册审核后，请尽快申请加入班级');
+ [ RunTime:0.0006s ]
+SQL: 
+-- -----------------------------
+-- Table structure for `acm_todaylogin`
+-- -----------------------------
+DROP TABLE IF EXISTS `acm_todaylogin`;
+ [ RunTime:0.0026s ]
+SQL: CREATE TABLE `acm_todaylogin` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
+ [ RunTime:0.0078s ]
+SQL: 
+-- -----------------------------
+-- Records of `acm_todaylogin`
+-- -----------------------------
+INSERT INTO `acm_todaylogin` VALUES ('3', '2017-05-15 20:48:54');
+ [ RunTime:0.0007s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('4', '2017-05-16 17:36:09');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('5', '2017-05-16 17:53:23');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('6', '2017-05-19 02:37:49');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('7', '2017-05-19 14:25:51');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('8', '2017-05-19 15:52:00');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('9', '2017-05-20 01:25:17');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('10', '2017-05-22 03:13:58');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('11', '2017-05-25 18:57:48');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('12', '2017-05-25 19:23:38');
+ [ RunTime:0.0005s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('13', '2017-05-25 19:35:11');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('14', '2017-05-25 20:09:47');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('15', '2017-05-25 20:11:47');
+ [ RunTime:0.0003s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('16', '2017-05-25 23:20:14');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('17', '2017-05-25 23:40:01');
+ [ RunTime:0.0003s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('18', '2017-05-26 01:42:40');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('19', '2017-05-26 13:20:37');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('20', '2017-05-30 15:47:11');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('21', '2017-05-31 11:07:17');
+ [ RunTime:0.0003s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('22', '2017-05-31 12:05:46');
+ [ RunTime:0.0003s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('23', '2017-05-31 12:35:20');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('24', '2017-05-31 12:35:40');
+ [ RunTime:0.0003s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('25', '2017-06-08 00:25:31');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('26', '2017-06-09 02:19:42');
+ [ RunTime:0.0003s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('27', '2017-06-09 03:31:13');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('28', '2017-06-09 03:55:04');
+ [ RunTime:0.0003s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('29', '2017-06-09 16:35:19');
+ [ RunTime:0.0006s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('30', '2017-06-09 18:13:07');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('31', '2017-06-09 18:43:39');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('32', '2017-06-09 20:19:55');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('33', '2017-06-09 20:20:16');
+ [ RunTime:0.0003s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('34', '2017-06-09 20:20:36');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('35', '2017-06-09 20:55:37');
+ [ RunTime:0.0003s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('36', '2017-06-09 21:42:32');
+ [ RunTime:0.0003s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('37', '2017-06-09 21:48:42');
+ [ RunTime:0.0003s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('38', '2017-06-09 21:49:54');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_todaylogin` VALUES ('39', '2017-06-09 21:58:22');
+ [ RunTime:0.0003s ]
+SQL: 
+-- -----------------------------
+-- Table structure for `acm_user`
+-- -----------------------------
+DROP TABLE IF EXISTS `acm_user`;
+ [ RunTime:0.0028s ]
+SQL: CREATE TABLE `acm_user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(18) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  `md5pwd` varchar(45) DEFAULT NULL,
+  `nickname` varchar(20) NOT NULL,
+  `sign_up_time` datetime DEFAULT NULL,
+  `last_login_time` datetime DEFAULT NULL,
+  `phonenumber` varchar(11) DEFAULT NULL,
+  `institude` varchar(10) DEFAULT NULL,
+  `class` varchar(15) DEFAULT NULL,
+  `grade` int(3) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `stu_id` varchar(12) NOT NULL,
+  `stu_img` varchar(50) DEFAULT NULL,
+  `sex` int(2) DEFAULT NULL,
+  `level` int(3) DEFAULT NULL,
+  `is_passed` int(2) NOT NULL DEFAULT '0',
+  `is_locked` int(2) DEFAULT '0',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username_UNIQUE` (`username`),
+  UNIQUE KEY `stu_id_UNIQUE` (`stu_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
+ [ RunTime:0.0091s ]
+SQL: 
+-- -----------------------------
+-- Records of `acm_user`
+-- -----------------------------
+INSERT INTO `acm_user` VALUES ('1', 'user123', '123456', 'e10adc3949ba59abbe56e057f20f883e', '腾兴业', '2017-04-22 20:43:55', '2017-06-08 00:25:31', '20172231442', '计算机科学与技术学院', '计科1301', '2014', '333@qq.com', '123', 'e6b39bdb91c7bf1e3010ccef10ea864c.jpg', '1', '0', '1', '1');
+ [ RunTime:0.0010s ]
+SQL: INSERT INTO `acm_user` VALUES ('2', 'user111', '123456', 'e10adc3949ba59abbe56e057f20f883e', '侯天干', '2017-04-27 15:48:23', '2017-06-09 20:19:55', '12341234123', '计算机科学与技术学院', '计科1301', '2017', '333@qq.com', '2', '3bceabd331cfd534700fdb40c7b05fc5.jpg', '1', '0', '1', '0');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_user` VALUES ('3', 'user222', '123456', 'e10adc3949ba59abbe56e057f20f883e', '杜霞', '2017-04-27 15:51:33', '2017-06-09 21:58:22', '1231', '计算机科学与技术1', '计科1301', '2013', '333@qq.com', '32', 'e02b5a3bc5f456c62ba2fb77c0034ecd.jpg', '2', '1', '1', '0');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_user` VALUES ('4', 'user333', '123456', 'e10adc3949ba59abbe56e057f20f883e', '平孟阳', '2017-04-27 16:01:27', '2017-06-09 21:48:42', '12341234123', '计算机科学与技术学院', '计科1301', '2015', '333@qq.com', '5', 'mystery.png', '1', '0', '1', '0');
+ [ RunTime:0.0005s ]
+SQL: INSERT INTO `acm_user` VALUES ('5', 'user444', '123456', 'e10adc3949ba59abbe56e057f20f883e', '匡碧菡', '2017-05-04 12:52:40', '2017-05-22 03:13:58', '12312312312', '计算机科学与技术学院', '计科1301', '2014', '333@qq.com', '4', 'mystery.png', '1', '0', '1', '0');
+ [ RunTime:0.0005s ]
+SQL: INSERT INTO `acm_user` VALUES ('6', 'user555', '123456', 'e10adc3949ba59abbe56e057f20f883e', '区嘉歆', '2017-05-04 12:52:57', '2017-05-25 23:40:01', '12312312312', '计算机科学与技术学院', '计科1301', '2014', '333@qq.com', '6', 'mystery.png', '1', '0', '1', '0');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_user` VALUES ('7', 'user666', '123456', 'e10adc3949ba59abbe56e057f20f883e', '庄新冬', '2017-05-04 12:54:51', '2017-06-09 20:55:37', '12312312312', '商学院', '计科1301', '2014', '333@qq.com', '7', 'eb543a1a8ebb21d2e7438995d48a0dec.jpg', '1', '0', '1', '0');
+ [ RunTime:0.0003s ]
+SQL: INSERT INTO `acm_user` VALUES ('8', 'user777', '123456', 'e10adc3949ba59abbe56e057f20f883e', '考震轩', '2017-05-04 12:57:34', '2017-06-09 21:49:54', '12312312312', '商学院', '计科1301', '2014', '333@qq.com', '8', 'mystery.png', '0', '0', '1', '0');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_user` VALUES ('9', 'user888', '123456', 'e10adc3949ba59abbe56e057f20f883e', '叶若云', '2017-05-04 23:07:39', '2017-05-30 15:47:11', '12312312312', '计算机科学与技术学院', '计科1301', '2014', '333@qq.com', '91', 'mystery.png', '0', '0', '1', '0');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_user` VALUES ('10', 'user999', '123456', 'e10adc3949ba59abbe56e057f20f883e', '季书双', '2017-05-04 23:09:51', '2017-05-22 03:13:58', '12312312312', '商学院', '计科1301', '2014', '333@qq.com', '123123131222', 'mystery.png', '0', '0', '1', '0');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_user` VALUES ('11', 'user101', '123456', 'e10adc3949ba59abbe56e057f20f883e', '储齐心', '2017-05-25 18:27:03', '2017-05-25 18:27:03', '11111111111', '数学学院', '数学1230', '2017', '1231@qq.com', '12312312312', 'mystery.png', '1', '0', '1', '0');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_user` VALUES ('12', 'wjc000', '123456', 'e10adc3949ba59abbe56e057f20f883e', '权芷雪', '2017-06-09 03:29:50', '2017-06-09 03:55:04', '123123', '信息学院', '揭开1203', '2017', '123123@qq.com', '123123123', '7f040c30711b2daed56185d5421ff77f.jpg', '0', '0', '1', '0');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_user` VALUES ('13', 'wjc222', '123456', 'e10adc3949ba59abbe56e057f20f883e', '说菊月', '2017-06-09 03:53:59', '2017-06-09 03:53:59', '123', '数学学院', '计科1301', '2013', '123@qq.com', '123123123123', 'mystery.png', '0', '0', '1', '0');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_user` VALUES ('14', 'wjc333', '123456', 'e10adc3949ba59abbe56e057f20f883e', '羽和玉', '2017-06-09 18:56:35', '2017-06-09 18:56:35', '13600328498', '数学学院', '计科1391', '2013', '306774585@qq.com', '20131222140', 'mystery.png', '0', '0', '0', '0');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_user` VALUES ('50', 'wjc113', '123456', 'e10adc3949ba59abbe56e057f20f883e', 'wjc', '2017-06-10 02:16:09', '2017-06-10 02:16:09', '13600328498', 'CS', 'CS1301', '2013', '11@qq.com', '111111111111', 'mystery.png', '0', '0', '1', '0');
+ [ RunTime:0.0003s ]
+SQL: 
+-- -----------------------------
+-- Table structure for `acm_user_admin`
+-- -----------------------------
+DROP TABLE IF EXISTS `acm_user_admin`;
+ [ RunTime:0.0025s ]
+SQL: CREATE TABLE `acm_user_admin` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `stu_id` int(11) NOT NULL,
+  `clazz_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+ [ RunTime:0.0082s ]
+SQL: 
+
+-- -----------------------------
+-- Table structure for `acm_user_clazz`
+-- -----------------------------
+DROP TABLE IF EXISTS `acm_user_clazz`;
+ [ RunTime:0.0031s ]
+SQL: CREATE TABLE `acm_user_clazz` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `clazz_id` int(11) NOT NULL,
+  `level` int(11) NOT NULL DEFAULT '0',
+  `check_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `stu_id_UNIQUE` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+ [ RunTime:0.0080s ]
+SQL: 
+-- -----------------------------
+-- Records of `acm_user_clazz`
+-- -----------------------------
+INSERT INTO `acm_user_clazz` VALUES ('1', '8', '1', '0', '2017-06-08 00:23:12');
+ [ RunTime:0.0007s ]
+SQL: INSERT INTO `acm_user_clazz` VALUES ('2', '9', '1', '0', '2017-06-08 00:23:12');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_user_clazz` VALUES ('3', '10', '1', '0', '2017-06-08 00:23:12');
+ [ RunTime:0.0004s ]
+SQL: INSERT INTO `acm_user_clazz` VALUES ('4', '11', '1', '1', '2017-06-08 00:23:12');
+ [ RunTime:0.0004s ]
+SQL: SET FOREIGN_KEY_CHECKS = 1 [ RunTime:0.0001s ]
+
+[ 2017-06-10T02:41:22+08:00 ] ::1 /sys/admin.php/Database/ShowImport.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000282s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000266s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000340s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000129s ]
+NOTIC: [8] Undefined variable: name /Library/WebServer/Documents/sys/Application/Runtime/Cache/Admin/a2ccf40a7d7447150b41ee64d32a92aa.php 第 40 行.
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000193s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000265s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000121s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000186s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002245s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000265s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000019s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001874s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000793s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001438s ]
+
+[ 2017-06-10T02:41:27+08:00 ] ::1 /sys/admin.php/Database/ShowImport.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000255s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000268s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000342s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000170s ]
+NOTIC: [8] Undefined variable: name /Library/WebServer/Documents/sys/Application/Runtime/Cache/Admin/a2ccf40a7d7447150b41ee64d32a92aa.php 第 40 行.
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000211s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000296s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000151s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000226s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002187s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000296s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000017s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001749s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000618s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000858s ]
+
+[ 2017-06-10T02:41:28+08:00 ] ::1 /sys/admin.php/Database/ShowImport.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000257s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000271s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000344s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000169s ]
+NOTIC: [8] Undefined variable: name /Library/WebServer/Documents/sys/Application/Runtime/Cache/Admin/a2ccf40a7d7447150b41ee64d32a92aa.php 第 40 行.
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000205s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000280s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000126s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000202s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002385s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000280s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000029s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001988s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000582s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000782s ]
+
+[ 2017-06-10T02:41:29+08:00 ] ::1 /sys/admin.php/Database/ShowImport.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000258s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000363s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000451s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000060s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000138s ]
+NOTIC: [8] Undefined variable: name /Library/WebServer/Documents/sys/Application/Runtime/Cache/Admin/a2ccf40a7d7447150b41ee64d32a92aa.php 第 40 行.
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000219s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000300s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000129s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000197s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002184s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000300s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000019s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001757s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000552s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000637s ]
+
+[ 2017-06-10T02:41:29+08:00 ] ::1 /sys/admin.php/Database/ShowImport.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000260s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000274s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000351s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000070s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000163s ]
+NOTIC: [8] Undefined variable: name /Library/WebServer/Documents/sys/Application/Runtime/Cache/Admin/a2ccf40a7d7447150b41ee64d32a92aa.php 第 40 行.
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000205s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000283s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000141s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000220s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002306s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000283s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000017s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001859s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000573s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000749s ]
+
+[ 2017-06-10T02:41:37+08:00 ] ::1 /sys/admin.php/StuInfo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000256s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000270s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000342s ]
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 1 AND `is_locked` = 0 AND `nickname` LIKE '%%' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`nickname`,`institude`,`grade` FROM `acm_user` WHERE `is_passed` = 1 AND `is_locked` = 0 AND `nickname` LIKE '%%' LIMIT 0,8   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000142s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000287s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000172s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000253s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000120s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000183s ]
+SQL: SHOW COLUMNS FROM `acm_check_clazz` [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_check_clazz` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000216s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.001639s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000020s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001749s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001462s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.001639s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000023s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.003010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000813s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000952s ]
+
+[ 2017-06-10T02:41:39+08:00 ] ::1 /sys/admin.php/Database/ShowImport.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000253s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000262s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000335s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000151s ]
+NOTIC: [8] Undefined variable: name /Library/WebServer/Documents/sys/Application/Runtime/Cache/Admin/a2ccf40a7d7447150b41ee64d32a92aa.php 第 40 行.
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000199s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000283s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000122s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000185s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002099s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000283s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000016s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001709s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001249s ]
+
+[ 2017-06-10T02:41:40+08:00 ] ::1 /sys/admin.php/Database/ShowExport.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000250s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000263s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000335s ]
+SQL: SHOW TABLE STATUS [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000152s ]
+NOTIC: [8] Undefined variable: name /Library/WebServer/Documents/sys/Application/Runtime/Cache/Admin/630a07003a26008c48356c9049b49302.php 第 40 行.
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000198s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000277s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000159s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000285s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001563s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000277s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000017s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.001067s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000842s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001027s ]
+
+[ 2017-06-10T02:41:43+08:00 ] ::1 /sys/admin.php/Database/ShowImport.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000245s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000260s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000332s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000061s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000140s ]
+NOTIC: [8] Undefined variable: name /Library/WebServer/Documents/sys/Application/Runtime/Cache/Admin/a2ccf40a7d7447150b41ee64d32a92aa.php 第 40 行.
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000232s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000319s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000142s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000220s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.002458s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000319s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000022s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.002076s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001078s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001233s ]
+
+[ 2017-06-10T08:21:56+08:00 ] ::1 /sys/admin.php/Check/CheckStuSign.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000260s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000285s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000363s ]
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE ( is_passed=0 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `id`,`nickname`,`institude`,`grade` FROM `acm_user` WHERE `is_passed` = 0 LIMIT 0,8   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000132s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000289s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000710s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000944s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000195s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000305s ]
+SQL: SHOW COLUMNS FROM `acm_check_clazz` [ RunTime:0.0011s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_check_clazz` LIMIT 1   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006426s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.003556s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000069s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.009938s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009764s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.003556s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000055s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.013358s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001360s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001853s ]
+
+[ 2017-06-10T08:21:56+08:00 ] ::1 /sys/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000374s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000391s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000507s ]
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `acm_clazz` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_clazz` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `acm_admin` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_admin` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `acm_todaylogin` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_todaylogin` WHERE ( to_days(datetime) = to_days(now()) ) LIMIT 1   [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `acm_inform` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `acm_inform`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000082s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000184s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000304s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000430s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000199s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000318s ]
+SQL: SHOW COLUMNS FROM `acm_check_clazz` [ RunTime:0.0005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_check_clazz` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000212s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.002175s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000021s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.002131s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001169s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.002175s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000020s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.003084s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000530s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000850s ]
+
+[ 2017-06-10T08:21:57+08:00 ] ::1 /sys/admin.php/Check/CheckStuSign.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000259s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000266s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000340s ]
+SQL: SHOW COLUMNS FROM `acm_user` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE ( is_passed=0 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`nickname`,`institude`,`grade` FROM `acm_user` WHERE `is_passed` = 0 LIMIT 0,8   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000202s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_user` WHERE `is_passed` = 0 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000347s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000146s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000220s ]
+SQL: SHOW COLUMNS FROM `acm_check_clazz` [ RunTime:0.0006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `acm_check_clazz` LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000243s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.002663s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000020s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.002749s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001832s ]
+INFO: [ view_parse ] --END-- [ RunTime:-0.002663s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000019s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.004375s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001571s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001726s ]
+

@@ -1,0 +1,170 @@
+<include file="Public/header" />
+<include file="Public/navbar" />
+
+<style media="screen">
+    .barcard {
+        margin-bottom: 1.5rem;
+        border: 1px solid #cfd8dc;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+    }
+
+    .barcard a {
+        text-decoration: none;
+    }
+
+    .barcard .card-block {
+        flex: 1 1 auto;
+        padding: 1.25rem;
+    }
+
+    .barcard-primary {
+        background-color: #20a8d8;
+        border-color: #fff;
+    }
+
+    .barcard-primary .card-block {
+        color: #fff;
+    }
+
+    .barcard-default {
+        background-color: rgba(255, 255, 255, 0.7);
+        border-color: #fff;
+    }
+
+    .barcard-default .card-block {
+        color: #888;
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="row">
+        <include file="Public/accountleft" />
+        <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+            <ol class="breadcrumb">
+                <li><a href="{:U('Index/index')}">主页</a></li>
+                <li class="active">增加管理员</li>
+            </ol>
+            <!-- 导航栏 -->
+            <div class="col-sm-12 col-md-12">
+                <div class="col-sm-3 col-md-3">
+                    <div class="barcard barcard-default">
+                        <a href="{:U('index')}">
+                            <div class="card-block">
+                                <h4 class="mb-0">账号</h4>
+                                <p>显示管理员列表</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-3">
+                    <div class="barcard barcard-primary">
+                        <a href="#">
+                            <div class="card-block">
+                                <h4 class="mb-0">增加</h4>
+                                <p>添加新的管理员</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- END 导航栏 -->
+            <!-- 内容 -->
+            <div class="col-sm-12 col-md-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">新增管理员</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-sm-6 col-md-6">
+                            <form method="post">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">账号</label>
+                                    <input type="text" class="form-control" id="username" name="username" placeholder="登陆账号" maxlength="20">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">密码</label>
+                                    <input type="password" class="form-control" id="pwd1" name="pwd1" placeholder="登陆密码" maxlength="18">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">确认密码</label>
+                                    <input type="password" class="form-control" id="pwd2" name="pwd2" placeholder="登陆密码" maxlength="18">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">姓名</label>
+                                    <input type="text" class="form-control" id="nickname" name="nickname" placeholder="" maxlength="18">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">职称</label>
+                                    <input type="text" class="form-control" id="position" name="position" placeholder="" maxlength="18">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">联系电话</label>
+                                    <input type="text" class="form-control" id="phonenumber" name="phonenumber" placeholder="" maxlength="18">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">邮箱地址</label>
+                                    <input type="text" class="form-control" id="email" name="email" placeholder="" maxlength="18">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">QQ号码</label>
+                                    <input type="text" class="form-control" id="tecentNumber" name="tecentNumber" placeholder="" maxlength="18">
+                                </div>
+                                <button type="button" class="btn btn-default" id="btn-add">新增</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END 内容 -->
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function() {
+        //作为时间
+        $('#btn-add').click(function(){
+            var username = $('input[name=username]').val();
+            var pwd1 = $('input[name=pwd1]').val();
+            var pwd2 = $('input[name=pwd2]').val();
+            var nickname = $('input[name=nickname]').val();
+            var position = $('input[name=position]').val();
+            var phonenumber = $('input[name=phonenumber]').val();
+            var email = $('input[name=email]').val();
+            var tecentNumber = $('input[name=tecentNumber]').val();
+            $.ajax({
+                type: 'post',
+                url: "{:U('doAddManager')}",
+                data: {
+                    username: username,
+                    pwd1: pwd1,
+                    pwd2: pwd2,
+                    nickname: nickname,
+                    position: position,
+                    phonenumber: phonenumber,
+                    email: email,
+                    tecentNumber, tecentNumber,
+                },
+                cache: false,
+                dataType: 'json',
+                timeout: 5000,
+                success: function(data){
+                    if(data==1){
+                        alert('添加成功');
+                        window.location.reload();
+                    } else {
+                        alert(data);
+                    }
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("出错了，请刷新尝试");
+                    console.log(XMLHttpRequest.status);
+                    console.log(XMLHttpRequest.readyState);
+                    console.log(textStatus);
+                },
+            });
+        });
+    });
+</script>
+<include file="Public/footer" />

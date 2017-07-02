@@ -1,0 +1,333 @@
+<include file="Public/header" />
+<include file="Public/navbar" />
+
+<div class="container-fluid" id="base">
+    <div class="row wrap">
+        <!-- 左侧 -->
+        <div class="col-md-9 baseLeft">
+            <div class="col-md-12 box box-left-one">
+                <!-- 如果已经加入班级 -->
+                <if condition="($join eq 1)">
+                    <div class="col-md-6 col-sm-6">
+                        <!-- 班级信息 -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">所在班级信息</div>
+                            <div class="panel-body">
+                                <div class="clazz-info">
+                                    <h3 class="title">{$classInfo.clazzname}</h3>
+                                    <h4>简介：{$classInfo.clazz_info}</h4>
+                                    <h4>年级：{$classInfo.grade}</h4>
+                                    <h4>等级：
+                                        <switch name="classInfo.level" >
+                                        <case value="1" >初级班</case>
+                                        <case value="2" >中级班</case>
+                                        <case value="3">高级班</case>
+                                        <default />未评级
+                                        </switch>
+                                    </h4>
+                                    <h4>创建时间：<php>echo date('Y年m月d日',strtotime($classInfo['create_time']));</php></h4>
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <ul class="clazz-info-footer">
+                                    <li><a href="#" id="btn-show-tutor">指导老师信息</a></li>
+                                    <li><a href="#" id="btn-quit-class">退出班级</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- 班级信息 END-->
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">班级事务</div>
+                            <div class="panel-body">
+                                <if condition="$clazzwork">
+                                    <blockquote>
+                                        <p>{$clazzwork.workcontent}</p>
+                                        <footer>{$clazzwork.createtime}</cite></footer>
+                                    </blockquote>
+                                    <else />
+                                    <blockquote>
+                                        <p>暂无消息</p>
+                                    </blockquote>
+                                </if>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 学生列表 -->
+                    <div class="col-md-6 col-sm-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">学生列表</div>
+                            <div class="panel-body">
+                                <div class="dir-info">
+                                    <volist name="stuList" id="list">
+                                        <div class="row">
+                                            <div class="col-xs-3">
+                                                <div class="avatar">
+                                                    <img src="__ROOT__/Avatar/{$list.stu_img}" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <h5>{$list.nickname}</h5>
+                                                <span class="small dir-span">{$list.institude}</span>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <a class="dir-like btn-stu-info" href="#" value="{$list.id}">
+                                                    <span class="small">查看</span>
+                                                    <i class="fa fa-user-o"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </volist>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 学生列表 end -->
+                    <!-- <php>p($joinInfo);</php>
+                    <php>p($classInfo);</php>
+                    <php>p($stuList);</php> -->
+                    <!-- 如果已经加入班级  end-->
+                    <!-- 如果处于申请状态 -->
+                    <elseif condition="$check eq 1" />
+                    <div class="col-md-5 col-sm-5">
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                等待管理员审核
+                            </div>
+                            <div class="panel-body">
+                                <blockquote>
+                                    <p>已申请{$classInfo['clazzname']}班</p>
+                                    <footer>申请时间：{$checkInfo[0]['checktime']}</footer>
+                                </blockquote>
+                            </div>
+                            <div class="panel-footer" style="text-align:right;">
+                                <a class="cancel" id='btn-cancel-check' value="{$checkInfo[0]['id']}"><span>取消申请</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <else />
+                    <!-- 如果不在申请状态，也不在班级状态 -->
+                    <div class="box-title">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12">
+                                <div class="alert alert-success alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <strong>未加入兴趣班</strong> 请选择适合的兴趣班申请加入！
+                                </div>
+                            </div>
+                            <volist name="list" id="vo">
+                                <!-- panel start -->
+                                <div class="col-sm-3">
+                                    <div class="panel panel-primary">
+                                        <div class="panel-heading">
+                                            {$vo.clazzname}
+                                        </div>
+                                        <div class="panel-body">
+                                            <p>年级：{$vo.grade}级</p>
+                                            <p>等级：
+                                                <switch name="vo.level">
+                                                    <case value="1">初级班</case>
+                                                    <case value="2">中级班</case>
+                                                    <case value="3">高级班</case>
+                                                    <default />未评级
+                                                </switch>
+                                            </p>
+                                        </div>
+                                        <div class="panel-footer">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <button class="btn btn-success btn-sm btn-join" type="submit" value="{$vo.id}">加入</button>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <a href="__MODULE__/ShowOneClass/{$vo.id}">
+                                                        <button class="btn btn-default btn-sm" type="submit">查看</button>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- panel end -->
+                            </volist>
+                        </div>
+                    </div>
+                </if>
+
+
+            </div>
+        </div>
+        <!-- 右侧 -->
+        <div class="col-md-3 baseRight">
+            {:W('Right/Personal')} {:W('Right/news')}
+        </div>
+    </div>
+</div>
+
+<!-- 学生信息 Modal -->
+<div class="modal fade bs-example-modal-sm" id="StuInfoModal" tabindex="-1" role="dialog" aria-labelledby="StuInfoModal">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="StuInfoLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered">
+                    <tr>
+                        <td>年级</td>
+                        <td id="stu_grade"></td>
+                    </tr>
+                    <tr>
+                        <td>联系电话</td>
+                        <td id="stu_phonenumber"></td>
+                    </tr>
+                    <tr>
+                        <td>邮箱地址</td>
+                        <td id="stu_email"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 学生信息 Modal End -->
+<!-- 导师 Modal -->
+<div class="modal fade bs-example-modal-sm" id="tutorInfoModal" tabindex="-1" role="dialog" aria-labelledby="tutorInfoModal">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="tutorInfoLabel">{$tutorInfo.nickname}</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered">
+                    <tr>
+                        <td>E-mail</td>
+                        <td>{$tutorInfo.email}</td>
+                    </tr>
+                    <tr>
+                        <td>联系电话</td>
+                        <td>{$tutorInfo.phonenumber}</td>
+                    </tr>
+                    <tr>
+                        <td>QQ</td>
+                        <td>{$tutorInfo.tecentnumber}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 导师 Modal End -->
+
+
+<script type="text/javascript">
+    $(function() {
+        //学生详情
+        $('.btn-stu-info').click(function() {
+            var id = $(this).attr('value');
+            $.ajax({
+                type: "get",
+                url: "{:U('returnOneStuInfo')}",
+                data: {
+                    id: id
+                },
+                cache: false,
+                dataType: 'json',
+                timeout: 5000,
+                success: function(data) {
+                    var data = eval('(' + data + ')');
+                    $('#StuInfoLabel').text(data.nickname);
+                    $('#stu_grade').text(data.grade);
+                    $('#stu_phonenumber').text(data.phonenumber);
+                    $('#stu_email').text(data.email);
+                    $("#StuInfoModal").modal('show');
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("出错了，请重新尝试");
+                    console.log(XMLHttpRequest.status);
+                    console.log(XMLHttpRequest.readyState);
+                    console.log(textStatus);
+                },
+            });
+        });
+        //加入班级
+        $('.btn-join').click(function() {
+            var classid = $(this).val();
+            //ajax
+            $.ajax({
+                'type': 'post',
+                'url': "{:U('Class/applyClass')}",
+                'data': {
+                    classid: classid,
+                },
+                'success': function(data) {
+                    if (data == 1) {
+                        alert('申请成功，请等待管理员审批');
+                        document.location.href = "{:U('Class/index')}";
+                    } else {
+                        alert(data);
+                    }
+                },
+                'error': function() {
+                    alert("未知错误");
+                },
+                'dataType': 'json',
+                'async': false
+            });
+        });
+        //申请
+        $('#btn-cancel-check').click(function() {
+            var checkid = $('#btn-cancel-check').attr('value');
+            //ajax
+            $.ajax({
+                'type': 'POST',
+                'url': "{:U('Class/cancelApplyClass')}",
+                'data': {
+                    checkid: checkid,
+                },
+                'success': function(data) {
+                    if (data == 1) {
+                        alert('取消成功');
+                        document.location.href = "{:U('Class/index')}";
+                    } else {
+                        alert(data);
+                    }
+                },
+                'error': function() {
+                    alert("未知错误");
+                },
+                'dataType': 'json',
+                'async': false
+            });
+        });
+        //退出班级
+        $('#btn-quit-class').click(function(){
+            $.ajax({
+                'type': 'POST',
+                'url': "{:U('quitClass')}",
+                'data': {
+                },
+                'success': function(data) {
+                    if (data == 1) {
+                        alert('退出成功');
+                        document.location.href = "{:U('Class/index')}";
+                    } else {
+                        alert(data);
+                    }
+                },
+                'error': function() {
+                    alert("未知错误");
+                },
+                'dataType': 'json',
+                'async': false
+            });
+        })
+        //显示导师信息
+        $('#btn-show-tutor').click(function(){
+            $("#tutorInfoModal").modal('show');
+        });
+    });
+</script>
+
+<include file="Public/footer" />

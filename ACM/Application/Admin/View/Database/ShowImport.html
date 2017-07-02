@@ -1,0 +1,78 @@
+<include file="Public/header" />
+<include file="Public/navbar" />
+<div class="container-fluid">
+    <div class="row">
+        <include file="Public/sysleft" />
+        <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+            <ol class="breadcrumb">
+                <li><a href="{:U('Index/index')}">主页</a></li>
+                <li class="active">数据导出</li>
+            </ol>
+            <div class="col-md-12 col-sm-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">备份列表</h3>
+                    </div>
+                    <!-- 应用列表 -->
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th width="200">备份名称</th>
+                                <th width="80">卷数</th>
+                                <th width="80">压缩格式</th>
+                                <th width="80">数据大小</th>
+                                <th width="200">备份时间</th>
+                                <th width="120">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <volist name="list" id="data">
+                                <tr>
+                                    <td>{$data.time|date='Ymd-His',###}</td>
+                                    <td>{$data.part}</td>
+                                    <td>{$data.compress}</td>
+                                    <td>{$data.size|format_bytes}</td>
+                                    <td>{$key}</td>
+                                    <td class="action">
+                                        <a class="db-import2" value="{$data['time']}">还原</a>&nbsp;
+                                        <a class="ajax-get confirm" href="{:U('del?time='.$data['time'])}">删除</a>
+                                    </td>
+                                </tr>
+                            </volist>
+                        </tbody>
+                    </table>
+                    <!-- /应用列表 -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(".db-import2").click(function() {
+        var time = $(this).attr('value');
+        $.ajax({
+            type: "get",
+            url: "{:U('MyImport')}",
+            data: {
+                time: time,
+            },
+            cache: false,
+            dataType: 'json',
+            timeout: 5000,
+            success: function(data) {
+                if (data == 1) {
+                    alert("恢复成功");
+                    window.location.reload();
+                } else alert(data);
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert("出错了，请重新尝试");
+                console.log(XMLHttpRequest.status);
+                console.log(XMLHttpRequest.readyState);
+                console.log(textStatus);
+            },
+        });
+    });
+</script>
+<include file="Public/footer" />

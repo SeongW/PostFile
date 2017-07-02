@@ -1,0 +1,107 @@
+<include file="Public/header" />
+<include file="Public/navbar" />
+<div class="container-fluid">
+    <div class="row">
+        <include file="Public/left" />
+        <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+            <ol class="breadcrumb">
+                <li><a href="{:U('Index/index')}">主页</a></li>
+                <li class="active">审批学生注册信息</li>
+            </ol>
+            <div style="height:400px;">
+                <table class="table table-striped table-responsive">
+                    <tr>
+                        <th>#</th>
+                        <th>姓名</th>
+                        <th>学院</th>
+                        <th>年级</th>
+                        <th>详情</th>
+                        <th>审核</th>
+                        <th>删除记录</th>
+                    </tr>
+                    <volist name="stu" id="vo" offset="0" length='10' empty="$empty">
+                        <tr id="{$vo.id}">
+                            <td>{$vo.id}</td>
+                            <td>{$vo.nickname}</td>
+                            <td>{$vo.institude}</td>
+                            <td>{$vo.grade}级</td>
+                            <td><a href="__MODULE__/ShowStuInfo/{$vo.id}">查看</a></td>
+                            <td>
+                                <a href="" value="{$vo.id}" class="btn-pass">通过</a>
+                                <!-- <button type="button" class="btn btn-success btn-sm " value="{$vo.id}"></button> -->
+                            </td>
+                            <td>
+                                <a href="" value="{$vo.id}" class="del">删除</a>
+                            </td>
+                        </tr>
+                    </volist>
+                </table>
+            </div>
+            <div class="col-sm-6 col-sm-offset-3">
+                <nav aria-label="...">
+                    <ul class="pager">
+                        <li>{$page}</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function() {
+        //通过审核
+        $('.btn-pass').click(function() {
+            var id = $(this).attr('value');
+            $.ajax({
+                type: 'GET',
+                url: "{:U('Check/passStuSign')}",
+                data: {
+                    id: id,
+                },
+                cache: false,
+                dataType: 'json',
+                timeout: 5000,
+                success: function(data) {
+                    if (data == 1) {
+                        alert("通过审核");
+                        document.location.href = "{:U('Check/CheckStuSign')}";
+                    } else {
+                        alert(data);
+                    }
+                },
+                // error: function(XMLHttpRequest, textStatus, errorThrown) {
+                //     alert("出错了，请重新尝试");
+                //
+                // },
+            });
+        });
+        //删除某个学生的申请
+        $('.del').click(function() {
+            var id = $(this).attr('value');
+            $.ajax({
+                type: 'GET',
+                url: "{:U('Check/delStuSign')}",
+                data: {
+                    id: id,
+                },
+                cache: false,
+                dataType: 'json',
+                timeout: 5000,
+                success: function(data) {
+                    if (data == 1) {
+                        alert("删除成功");
+                        document.location.href = "{:U('Check/CheckStuSign')}";
+                    } else {
+                        alert(data);
+                    }
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("出错了，请重新尝试");
+                },
+            });
+        });
+    });
+</script>
+
+<include file="Public/footer" />

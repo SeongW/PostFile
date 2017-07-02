@@ -1,0 +1,90 @@
+<include file="Public/header" />
+<include file="Public/navbar" />
+
+<div class="container-fluid" id="base">
+    <div class="row wrap">
+        <!-- 左侧 -->
+        <div class="col-md-9 baseLeft">
+            <div class="col-md-12 box">
+                <div class="box-title">
+                    <p class="bg-primary lead">密码更改</p>
+                </div>
+                <form class="form-horizontal" method="post">
+                    <!-- 旧密码 -->
+                    <div class="form-group">
+                        <label for="passwordOld" class="col-sm-2 control-label">旧密码</label>
+                        <div class="col-sm-4">
+                            <input type="password" class="form-control" id="passwordOld" name="passwordOld" maxlength="18">
+                        </div>
+                    </div>
+                    <!-- 新密码1 -->
+                    <div class="form-group">
+                        <label for="passwordNew1" class="col-sm-2 control-label">新密码</label>
+                        <div class="col-sm-4">
+                            <input type="password" class="form-control" id="passwordNew1" name="passwordNew1" maxlength="18">
+                        </div>
+                    </div>
+                    <!-- 确认密码     -->
+                    <div class="form-group">
+                        <label for="passwordNew2" class="col-sm-2 control-label">确认密码</label>
+                        <div class="col-sm-4">
+                            <input type="password" class="form-control" id="passwordNew2" name="passwordNew2" maxlength="18">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="button" class="btn btn-submit" id="btn-mod">确认修改</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- 右侧 -->
+        <div class="col-md-3 baseRight">
+            {:W('Right/Personal')} {:W('Right/news')}
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $('#btn-mod').click(function(){
+            //获取数据
+            var passwordOld = $('#passwordOld').val();
+            var passwordNew1 = $('#passwordNew1').val();
+            var passwordNew2 = $('#passwordNew2').val();
+
+            //ajax
+            $.ajax({
+                'type': 'post',
+                'url': "{:U('Index/doModPwd')}",
+                'data': {
+                    'passwordOld': passwordOld,
+                    'passwordNew1': passwordNew1,
+                    'passwordNew2': passwordNew2,
+                },
+                'success': function(data){
+                    if(data == 1){
+                        alert("密码已成功更改");
+                        document.location.href="{:U(Index/ModPwd)}";
+                    }
+                    else if(data == 2)
+                        alert("旧密码不正确，请重新输入");
+                    else if(data == 3)
+                        alert("两次输入的新密码不一致");
+                    else if(data == 4)
+                        alert("服务器出错了，请重新尝试");
+                    else if(data == 5)
+                        alert("密码长度不少于6位")
+                    else alert("未知错误");
+                },
+                'error': function(){
+                    alert("未知错误");
+                },
+                'dataType': 'json',
+                'async': false
+            });
+        });
+    });
+</script>
+
+<include file="Public/footer" />

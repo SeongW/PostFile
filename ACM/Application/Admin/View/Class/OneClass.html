@@ -1,0 +1,474 @@
+<include file="Public/header" />
+<include file="Public/navbar" />
+<style media="screen">
+    .me td {
+        text-align: center;
+    }
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <include file="Public/classleft" />
+        <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+            <ol class="breadcrumb">
+                <li><a href="{:U('Index/index')}">主页</a></li>
+                <li><a href="{:U('Class/ShowClass')}">班级信息</a></li>
+                <li class="active">{$info.clazzname}</li>
+            </ol>
+            <div class="col-sm-12">
+                <div class="col-sm-6">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><h3>学生信息</h3></h3>
+                        </div>
+                        <table class="table table-bordered me">
+                            <tr>
+                                <th>姓名</th>
+                                <th>详情</th>
+                                <th>用户权限</th>
+                                <th>踢出</th>
+                            </tr>
+                            <volist name="stuList" id="vo">
+                                <tr>
+                                    <td>{$vo.nickname}</td>
+                                    <td><a href="#" value='{$vo.id}' class="btn-stu-detail">详情</a></td>
+                                    <td>普通-<a href="#" value='{$vo.id}' class="btn-stu-permit">提升</a></td>
+                                    <td><a href="#" value='{$vo.id}' class="btn-stu-delete">删除</a></td>
+                                </tr>
+                            </volist>
+                        </table>
+                    </div>
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><h3>管理者信息</h3></h3>
+                        </div>
+                        <table class="table table-bordered me">
+                            <tr>
+                                <th>姓名</th>
+                                <th>详情</th>
+                                <th>用户权限</th>
+                                <th>踢出</th>
+                            </tr>
+                            <volist name="adminList" id="vo">
+                                <tr>
+                                    <td>{$vo.nickname}</td>
+                                    <td><a href="#" value='{$vo.id}' class="btn-stu-detail">详情</a></td>
+                                    <td>管理者-<a href="#" value='{$vo.id}' class="btn-stu-demotion">降级</a></td>
+                                    <td><a href="#" value='{$vo.id}' class="btn-stu-delete">删除</a></td>
+                                </tr>
+
+                            </volist>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                            <h3>{$info.clazzname}</h3>
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            简介：{$info.clazz_info}
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item">创建时间：<php>echo date('Y年m月d日',strtotime($info['create_time']));</php></li>
+
+                            <li class="list-group-item">指导老师：{$tutorName.nickname}</li>
+                            <li class="list-group-item">年级：{$info.grade}级</li>
+                            <li class="list-group-item">等级：
+                                <switch name="info.level">
+                                    <case value="1">初级</case>
+                                    <case value="2">中级</case>
+                                    <case value="3">高级</case>
+                                    <default />未评级
+                                </switch>
+                            </li>
+                            <table class="table table-bordered me">
+                                <tr>
+                                    <td><a href="#" data-toggle="modal" data-target="#modClassModal">修改</a></td>
+                                    <td><a href="#" id="btn-del-class">删除</a></td>
+                                </tr>
+                            </table>
+                        </ul>
+                    </div>
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                            <h3>事务信息</h3>
+                            </h3>
+                        </div>
+                        <if condition="$classwork">
+                            <div class="panel-body">
+                                <textarea class="form-control" rows="7" id="workcontent">{$classwork.workcontent}</textarea>
+                            </div>
+                            <div class="panel-footer" style="background-color:#fcf8e3;text-align:center;">
+                                <a href="#" value="{$classwork.clazz_id}" class="btn-mod-work">修改</a>
+                            </div>
+                            <else />
+                            <div class="panel-footer" style="background-color:#fcf8e3;text-align:center;">
+                                <a href="#" value="{$info.id}" class="btn-add-work">添加</a>
+                            </div>
+                        </if>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 学生信息 Modal -->
+<div class="modal fade bs-example-modal-sm" id="StuInfoModal" tabindex="-1" role="dialog" aria-labelledby="StuInfoModal">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="StuInfoLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered">
+                    <tr>
+                        <td>性别</td>
+                        <td id="stu_sex"></td>
+                    </tr>
+                    <tr>
+                        <td>学号</td>
+                        <td id="stu_id"></td>
+                    </tr>
+                    <tr>
+                        <td>学院</td>
+                        <td id="stu_institude"></td>
+                    </tr>
+                    <tr>
+                        <td>班级</td>
+                        <td id="stu_class"></td>
+                    </tr>
+                    <tr>
+                        <td>年级</td>
+                        <td id="stu_grade"></td>
+                    </tr>
+                    <tr>
+                        <td>联系电话</td>
+                        <td id="stu_phonenumber"></td>
+                    </tr>
+                    <tr>
+                        <td>邮箱地址</td>
+                        <td id="stu_email"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 学生信息 Modal End -->
+<!-- 修改班级信息 Modal -->
+<div class="modal fade" id="modClassModal" tabindex="-1" role="dialog" aria-labelledby="modClassModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">修改信息</h4>
+            </div>
+            <form class="form-horizontal">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="clazzname" class="col-sm-2 control-label">名称</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="mod_classname" placeholder="请输入班级名称" value="{$info.clazzname}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mod_tutor" class="col-sm-2 control-label">指导老师</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="mod_tutor">
+                                <foreach name="tutorList" item="vo" >
+                                    <option value="{$vo.id}">{$vo.nickname}</option>
+                                </foreach>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mod_grade" class="col-sm-2 control-label">年级</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="mod_grade" placeholder="输入年份，如：2017" maxlength="4" value="{$info.grade}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mod_grade" class="col-sm-2 control-label">等级</label>
+                        <div class="col-sm-10">
+                            <div class="radio">
+                                <label>
+                                <input type="radio" name="mod_level" id="mod_level1" value="1" {$info['level']==1?'checked':''}>
+                                初级
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                <input type="radio" name="mod_level" id="mod_level2" value="2" {$info['level']==2?'checked':''}>
+                                中级
+                              </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                <input type="radio" name="mod_level" id="mod_level3" value="3" {$info['level']==3?'checked':''}>
+                                高级
+                              </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mod_clazz_info" class="col-sm-2 control-label">简介</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" rows="3" id="mod_clazz_info" placeholder="最多输入250个字符">{$info.clazz_info}</textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" id="btnModClassInfo">确认修改</button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+<!-- 修改班级信息 Modal End -->
+
+<script type="text/javascript">
+    $(function() {
+        //学生详情
+        $('.btn-stu-detail').click(function() {
+            var id = $(this).attr('value');
+            $.ajax({
+                type: "get",
+                url: "{:U('returnOneStuInfo')}",
+                data: {
+                    id: id
+                },
+                cache: false,
+                dataType: 'json',
+                timeout: 5000,
+                success: function(data) {
+                    var data = eval('(' + data + ')');
+                    $('#StuInfoLabel').text(data.nickname);
+                    $('#stu_sex').text(data.sex);
+                    $('#stu_id').text(data.stu_id);
+                    $('#stu_institude').text(data.institude);
+                    $('#stu_class').text(data.class);
+                    $('#stu_grade').text(data.grade);
+                    $('#stu_phonenumber').text(data.phonenumber);
+                    $('#stu_email').text(data.email);
+                    $("#StuInfoModal").modal('show');
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("出错了，请重新尝试");
+                    console.log(XMLHttpRequest.status);
+                    console.log(XMLHttpRequest.readyState);
+                    console.log(textStatus);
+                },
+            });
+        });
+        //踢出学生
+        $('.btn-stu-delete').click(function() {
+            var id = $(this).attr('value');
+            $.ajax({
+                type: "get",
+                url: "{:U('kickOneStu')}",
+                data: {
+                    id: id
+                },
+                cache: false,
+                dataType: 'json',
+                timeout: 5000,
+                success: function(data) {
+                    if (data == 1){
+                        alert("删除成功");
+                        window.location.reload();
+                    }
+                    else alert("未知错误");
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("出错了，请重新尝试");
+                    console.log(XMLHttpRequest.status);
+                    console.log(XMLHttpRequest.readyState);
+                    console.log(textStatus);
+                },
+            });
+        });
+        //修改班级信息
+        $('#btnModClassInfo').click(function() {
+            var clazzname = $('#mod_classname').val();
+            var tutor = $('#mod_tutor').val();
+            var grade = $('#mod_grade').val();
+            var level = $('input:radio[name="mod_level"]:checked').val();
+            var clazzinfo = $('#mod_clazz_info').val();
+            $("#StuInfoModal").modal('hide');
+
+            $.ajax({
+                type: 'POST',
+                url: "{:U('modClassInfo')}",
+                data: {
+                    id: {$info.id},
+                    clazzname: clazzname,
+                    tutor: tutor,
+                    grade: grade,
+                    level: level,
+                    clazzinfo: clazzinfo
+                },
+                cache: false,
+                dataType: 'json',
+                timeout: 5000,
+                success: function(data) {
+                    if (data == 1) {
+                        alert("修改信息完成");
+                        window.location.reload();
+                    } else {
+                        alert(data);
+                    }
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("出错了，请重新尝试");
+                    console.log(XMLHttpRequest.status);
+                    console.log(XMLHttpRequest.readyState);
+                    console.log(textStatus);
+                },
+            });
+        });
+        //删除班级
+        $('#btn-del-class').click(function() {
+            $.ajax({
+                type: 'POST',
+                url: "{:U('delOneClass')}",
+                data: {
+                    id: {$info.id},
+                },
+                cache: false,
+                dataType: 'json',
+                timeout: 5000,
+                success: function(data) {
+                    if (data == 1) {
+                        alert("删除成功");
+                        document.location.href = "{:U('ShowClass')}";
+                    } else {
+                        alert(data);
+                    }
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("出错了，请重新尝试");
+                    console.log(XMLHttpRequest.status);
+                    console.log(XMLHttpRequest.readyState);
+                    console.log(textStatus);
+                },
+            });
+        });
+        //提升权限
+        $('.btn-stu-permit').click(function() {
+            var id = $(this).attr('value');
+            $.ajax({
+                type: "post",
+                url: "{:U('doPermitUser')}",
+                data: {
+                    stuid: id,
+                    classid: {$info.id},
+                },
+                cache: false,
+                dataType: 'json',
+                timeout: 5000,
+                success: function(data) {
+                    if (data == 1) {
+                        alert("操作成功");
+                        window.location.reload();
+                    } else alert("未知错误");
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("出错了，请重新尝试");
+                    console.log(XMLHttpRequest.status);
+                    console.log(XMLHttpRequest.readyState);
+                    console.log(textStatus);
+                },
+            });
+        });
+        //降权
+        $('.btn-stu-demotion').click(function() {
+            var id = $(this).attr('value');
+            $.ajax({
+                type: "post",
+                url: "{:U('doDemotionUser')}",
+                data: {
+                    stuid: id,
+                    classid: {$info.id},
+                },
+                cache: false,
+                dataType: 'json',
+                timeout: 5000,
+                success: function(data) {
+                    if (data == 1) {
+                        alert("操作成功");
+                        window.location.reload();
+                    } else alert("未知错误");
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("出错了，请重新尝试");
+                    console.log(XMLHttpRequest.status);
+                    console.log(XMLHttpRequest.readyState);
+                    console.log(textStatus);
+                },
+            });
+        });
+        //修改班级事务
+        $('.btn-mod-work').click(function(){
+            var content = $('#workcontent').val();
+            $.ajax({
+                type: "post",
+                url: "{:U('modClassWork')}",
+                data: {
+                    content: content,
+                    id: {$info.id},
+                },
+                cache: false,
+                dataType: 'json',
+                timeout: 5000,
+                success: function(data) {
+                    if (data == 1) {
+                        alert("修改成功");
+                        window.location.reload();
+                    } else alert("未知错误");
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("出错了，请重新尝试");
+                    console.log(XMLHttpRequest.status);
+                    console.log(XMLHttpRequest.readyState);
+                    console.log(textStatus);
+                },
+            });
+        });
+        //新增事务
+        $('.btn-add-work').click(function(){
+            var id = $(this).attr('value');
+            $.ajax({
+                type: "get",
+                url: "{:U('addClassWork')}",
+                data: {
+                    classid: id,
+                },
+                cache: false,
+                dataType: 'json',
+                timeout: 5000,
+                success: function(data) {
+                    if (data == 1) {
+                        alert("操作成功");
+                        window.location.reload();
+                    } else alert("未知错误");
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("出错了，请重新尝试");
+                    console.log(XMLHttpRequest.status);
+                    console.log(XMLHttpRequest.readyState);
+                    console.log(textStatus);
+                },
+            });
+        });
+    });
+</script>
+
+<include file="Public/footer" />

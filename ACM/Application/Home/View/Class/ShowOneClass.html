@@ -1,0 +1,70 @@
+<include file="Public/header" />
+<include file="Public/navbar" />
+
+<div class="container-fluid" id="base">
+    <div class="row wrap">
+        <!-- 左侧 -->
+        <div class="col-md-9 baseLeft">
+            <div class="col-md-12 box">
+                <div class="box-title">
+                    <p class="bg-primary lead">班级信息<span class="pull-right btn-mod" id="personInfo"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改</span>
+                    </p>
+                </div>
+                <div class="col-md-12">
+                    <p class="lead">名称：<span class="btm-dot">{$info.clazzname}
+                        <switch name="$info.level">
+                            <case value="1">初级班</case>
+                            <case value="2">中级班</case>
+                            <case value="3">高级班</case>
+                            <default />
+                        </switch>
+                    </span></p>
+                    <p class="lead">班级简介：<span class="btm-dot">{$info.clazz_info}</span></p>
+                    <p class="lead">年级：<span class="btm-dot">{$info.grade}级</span></p>
+                    <p class="lead">班级人数：12人<span class="btm-dot"></span></p>
+                    <p class="lead">创建时间：<span class="btm-dot">{$info.create_time}</span></p>
+                    <p class="lead">指导老师：<span class="btm-dot">{$info.tutor}</span></p>
+
+                    <php>p($classInfo);</php>
+
+                    <button type="button" class="btn btn-submit" id="btn-join">申请加入</button>
+                    <a href="{:U('Class/Index')}"><button type="button" class="btn btn-back" >返回</button></a>
+
+                </div>
+            </div>
+        </div>
+        <!-- 右侧 -->
+        <div class="col-md-3 baseRight">
+            {:W('Right/Personal')} {:W('Right/news')}
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $('#btn-join').click(function(){
+            var classid = {$info.id};
+            //ajax
+            $.ajax({
+                'type': 'post',
+                'url': "{:U('Class/applyClass')}",
+                'data': {
+                    classid: classid,
+                },
+                'success': function(data){
+                    if(data == 1){
+                        alert('申请成功，请等待管理员审批');
+                        document.location.href = "{:U('Class/index')}";
+                    } else{
+                        alert(data);
+                    }
+                },
+                'error': function(){
+                    alert("未知错误");
+                },
+                'dataType': 'json',
+                'async': false
+            });
+        });
+    });
+</script>
+<include file="Public/footer" />

@@ -1,0 +1,162 @@
+<include file="Public/header" />
+<include file="Public/navbar" />
+
+<div class="container-fluid">
+    <div class="row">
+        <include file="Public/left" />
+        <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+            <ol class="breadcrumb">
+                <li class="active">主页</li>
+            </ol>
+            <!-- 数量 -->
+            <div class="row">
+                <div class="col-md-12 col-sm-12 states-info">
+                    <div class="col-md-3">
+                        <div class="panel red-bg">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <i class="fa fa-address-card"></i>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <span class="state-title"> 学生人数 </span>
+                                        <h4>  {$stuCount}  </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel blue-bg">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <i class="fa fa-group"></i>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <span class="state-title">  班级数  </span>
+                                        <h4>  {$clazzCount}  </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel green-bg">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <i class="fa fa-eye"></i>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <span class="state-title">  管理员  </span>
+                                        <h4>  {$adminCount}  </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel yellow-bg">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <i class="fa fa-comment"></i>
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <span class="state-title">  今日访问  </span>
+                                        <h4>  {$todayCount}  </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 数量END -->
+            <!-- 通知 -->
+            <div class="col-md-12">
+                <div class="panel">
+                    <div class="panel-body">
+                        <div class="profile-desk">
+                            <h1>通知 - {$inform.title}</h1>
+                            <span class="designation">发布时间：{$inform.datetime}</span>
+                            <p>
+                                {$inform.content}
+                            </p>
+                            <a class="btn p-follow-btn pull-left" id="btn-show-editor" > <i class="fa fa-pencil-square-o"></i>修改</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 通知 END -->
+
+        </div>
+    </div>
+</div>
+<!-- 通知修改 -->
+<div class="modal fade" tabindex="-1" role="dialog" id="modInform">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">修改通知</h4>
+            </div>
+            <div class="modal-body">
+                <label for="informTitle">标题</label>
+                <input type="text" id="informTitle" class="form-control" aria-describedby="helpBlock">
+                <label for="informContent">内容</label>
+                <textarea class="form-control" rows="6" id="informContent"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="doModInform">保存修改</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<!-- 通知修改 end -->
+<script type="text/javascript">
+$(function(){
+    $("#btn-show-editor").click(function() {
+        $("#modInform").modal('show');
+    });
+    $("#doModInform").click(function() {
+        var title = $("#informTitle").val();
+        var content = $("#informContent").val();
+        alert(content);
+        $.ajax({
+            type: 'POST',
+            url: "{:U('doModInform')}",
+            data: {
+                title: title,
+                content: content,
+                id: {$inform.id},
+            },
+            cache: false,
+            dataType: 'json',
+            timeout: 5000,
+            success: function(data) {
+                if (data == 1) {
+                    alert("修改完成");
+                    window.location.reload();
+                } else {
+                    alert(data);
+                }
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert("出错了，请重新尝试");
+                console.log(XMLHttpRequest.status);
+                console.log(XMLHttpRequest.readyState);
+                console.log(textStatus);
+            },
+        });
+    });
+});
+
+
+</script>
+<include file="Public/footer" />

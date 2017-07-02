@@ -1,0 +1,53 @@
+<include file="Public/header" />
+<include file="Public/navbar" />
+<style media="screen">
+    .index-bg {
+        background-image: -webkit-linear-gradient(300deg, #a1c4fd 0%, #c2e9fb 100%);
+        background-image: -o-linear-gradient(300deg, #a1c4fd 0%, #c2e9fb 100%);
+        background-image: linear-gradient(30deg, #a1c4fd 0%, #c2e9fb 100%);
+    }
+
+    .banner-text {
+        padding-top: 138px;
+        padding-bottom: 138px;
+    }
+
+    .text-center {}
+
+    .banner-text h1 {
+        color: #000;
+        font-family: "Roboto Slab", sans-serif;
+        font-size: 80px;
+        font-weight: 300;
+    }
+
+    .banner-text p {
+        color: #000;
+        font-size: 19px;
+        font-weight: 400;
+        letter-spacing: 3px;
+        line-height: 24px;
+        margin-top: 30px;
+        margin-bottom: 80px;
+    }
+</style>
+<div class="container-fluid" id="base">
+    <div class="row wrap">
+        <!-- 左侧 -->
+        <div class="col-md-9 baseLeft">
+            <div class="col-md-12 box index-bg">
+                <div class="banner-text text-center">
+                    <h1>Hey, {$myname}</h1>
+                    <p>欢迎来到ACM报名管理系统<br></p>
+                </div>
+            </div>
+        </div>
+        <!-- 右侧 -->
+        <div class="col-md-3 baseRight">
+            {:W('Right/Personal')} {:W('Right/news')}
+        </div>
+    </div>
+</div>
+
+
+<include file="Public/footer" />
